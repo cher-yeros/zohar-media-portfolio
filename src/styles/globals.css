@@ -1,0 +1,999 @@
+/* Global styles for Zohar Media Portfolio */
+
+/* Import GLightbox CSS for video popups */
+@import url("/node_modules/glightbox/dist/css/glightbox.min.css");
+
+/* Ensure Bootstrap compatibility */
+@import url("/css/bootstrap.min.css");
+@import url("/css/font-awesome.min.css");
+@import url("/css/elegant-icons.css");
+@import url("/css/owl.carousel.min.css");
+@import url("/css/magnific-popup.css");
+@import url("/css/slicknav.min.css");
+@import url("/css/style.css");
+
+/* CSS Variables for new Google Fonts */
+:root {
+  --font-ancizar: "Ancizar Sans", sans-serif;
+  --font-figtree: "Figtree", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-noto-serif: "Noto Serif Ethiopic", serif;
+  --font-play: "Play", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+/* Font declarations to ensure consistency with original template */
+html,
+body {
+  font-family: "Josefin Sans", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Play", sans-serif !important;
+  color: #111111;
+  font-weight: 400;
+}
+
+/* Make Play the primary font for important elements */
+.primary-btn,
+.site-btn,
+.hero__title,
+.hero__subtitle,
+.section-title h2,
+.section-title span,
+.services__item h4,
+.about__text h2,
+.portfolio__filter li,
+.blog__item h4,
+.contact__widget h4,
+.footer__option__item h5 {
+  font-family: "Play", sans-serif !important;
+}
+
+/* Ensure Play font is used for navigation and buttons */
+.header__nav__menu a,
+.footer__option__item a,
+.read__more,
+.primary-btn,
+.site-btn {
+  font-family: "Play", sans-serif !important;
+}
+
+p {
+  font-family: "Josefin Sans", sans-serif !important;
+  color: #adadad;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+/* Swiper Hero Carousel Custom Styles */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .swiper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.hero .swiper-slide {
+  position: relative;
+  height: 100vh;
+}
+
+.hero__item {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Numbered Pagination Styles - Fixed positioning */
+.hero__pagination {
+  position: absolute !important;
+  left: 15% !important;
+  bottom: 45px !important;
+  width: auto !important;
+  max-width: 1140px !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  z-index: 9999 !important;
+  pointer-events: none !important;
+}
+
+.hero__pagination .swiper-pagination-bullet {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-family: "Play", sans-serif !important;
+  margin-right: 16px !important;
+  position: relative !important;
+  display: inline-block !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  pointer-events: auto !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero__pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0 !important;
+}
+
+.hero__pagination .swiper-pagination-bullet:hover {
+  color: #ffffff !important;
+}
+
+.hero__pagination .swiper-pagination-bullet-active {
+  color: #ffffff !important;
+}
+
+/* Add underline after each pagination button */
+.hero__pagination .swiper-pagination-bullet:after {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -6px !important;
+  width: 100% !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  content: "" !important;
+}
+
+/* Active button gets white underline */
+.hero__pagination .swiper-pagination-bullet-active:after {
+  background: #ffffff !important;
+  height: 2px !important;
+}
+
+/* Ensure button elements look exactly like the original */
+.hero__pagination button {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-family: "Play", sans-serif !important;
+  margin-right: 16px !important;
+  position: relative !important;
+  display: inline-block !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  transition: all 0.3s ease !important;
+  pointer-events: auto !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero__pagination button:last-child {
+  margin-right: 0 !important;
+}
+
+.hero__pagination button:hover {
+  color: #ffffff !important;
+}
+
+.hero__pagination button.active {
+  color: #ffffff !important;
+}
+
+.hero__pagination button:after {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -6px !important;
+  width: 100% !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  content: "" !important;
+}
+
+.hero__pagination button.active:after {
+  background: #ffffff !important;
+  height: 2px !important;
+}
+
+/* Hero text animations */
+.hero__text {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero__subtitle {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero__title {
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.hero .primary-btn {
+  display: inline-block;
+  font-size: 15px;
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  padding: 14px 32px 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero .primary-btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Border animation - expanding borders on hover */
+.hero .primary-btn:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  border-left: 2px solid #00bfe7;
+  border-top: 2px solid #00bfe7;
+  content: "";
+  z-index: -1;
+  transition: all 0.7s ease;
+}
+
+.hero .primary-btn:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  width: 30px;
+  border-right: 2px solid #00bfe7;
+  border-bottom: 2px solid #00bfe7;
+  content: "";
+  z-index: -1;
+  transition: all 0.7s ease;
+}
+
+.hero .primary-btn:hover:before {
+  height: 100%;
+  width: 100%;
+}
+
+.hero .primary-btn:hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+/* Custom styles for React components */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .header__nav__menu {
+    display: none;
+  }
+
+  .header__nav__menu.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .header__nav__menu ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header__nav__menu li {
+    margin: 10px 0;
+  }
+
+  /* Mobile hero adjustments */
+  .hero__title {
+    font-size: 36px;
+  }
+
+  /* Mobile pagination adjustments */
+  .hero__pagination {
+    bottom: 30px !important;
+  }
+
+  .hero__pagination .swiper-pagination-bullet {
+    font-size: 16px !important;
+    margin-right: 12px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero__pagination {
+    bottom: 20px !important;
+  }
+
+  .hero__pagination .swiper-pagination-bullet {
+    font-size: 14px !important;
+    margin-right: 10px !important;
+  }
+}
+
+/* Ensure proper spacing for React components */
+.services__features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.services__features li {
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.services__features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.process__item {
+  text-align: center;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+}
+
+.process__item__number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+/* Portfolio filter styles */
+.portfolio__filter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio__filter li {
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  padding: 8px 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.portfolio__filter li:hover,
+.portfolio__filter li.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Blog pagination styles */
+.blog__pagination {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.blog__pagination a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.blog__pagination a:hover,
+.blog__pagination a.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Contact form enhancements */
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact__form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.site-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.site-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive improvements */
+@media (max-width: 576px) {
+  .hero__text h2 {
+    font-size: 2rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio__filter ul {
+    justify-content: flex-start;
+  }
+
+  .portfolio__filter li {
+    margin: 0 5px 10px 0;
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure proper image handling */
+.set-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Work Section Styles */
+.work {
+  overflow: hidden;
+  background: #100028;
+  padding: 100px 0;
+}
+
+.work__gallery {
+  margin-right: -10px;
+  position: relative;
+}
+
+.work__item {
+  height: 311px !important;
+  width: calc(16.67% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.work__item.wide__item {
+  width: calc(33.33% - 10px);
+}
+
+.work__item.large__item {
+  width: calc(50% - 10px);
+}
+
+.work__item.small__item {
+  width: calc(16.67% - 10px);
+}
+
+.work__item .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  font-size: 20px;
+  text-decoration: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.work__item:hover .play-btn {
+  opacity: 1;
+}
+
+.work__item__hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.work__item:hover .work__item__hover {
+  transform: translateY(0);
+}
+
+.work__item__hover h4 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.work__item__hover ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work__item__hover li {
+  color: #adadad;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Responsive adjustments for work gallery */
+@media (max-width: 768px) {
+  .work__item {
+    width: calc(50% - 10px) !important;
+  }
+
+  .work__item.wide__item,
+  .work__item.large__item {
+    width: calc(100% - 10px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .work__item {
+    width: calc(100% - 10px) !important;
+  }
+}
+
+/* GLightbox Modal Styles */
+.glightbox-container {
+  z-index: 999999 !important;
+}
+
+.glightbox-clean .gslide-media {
+  box-shadow: none !important;
+}
+
+.glightbox-clean .gslide-media-content {
+  border-radius: 8px !important;
+}
+
+.glightbox-clean .gslide-media-content video {
+  border-radius: 8px !important;
+}
+
+/* Ensure video popup is responsive */
+.gslide-media-content {
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+}
+
+/* Custom close button styling */
+.gclose {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.gclose:hover {
+  background: rgba(0, 0, 0, 1) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Loading spinner */
+.gloader {
+  border: 3px solid #f3f3f3 !important;
+  border-top: 3px solid #00bfe7 !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Breadcrumb improvements */
+.breadcrumb__links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb__links a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__links span {
+  color: #666;
+}
+
+/* Work Section Filter Buttons */
+.work__filter {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #00bfe7;
+  color: #00bfe7;
+  padding: 12px 30px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-family: "Play", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #00bfe7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 191, 231, 0.3);
+}
+
+/* Work Grid Layout - Override conflicting styles */
+.work__gallery {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.work__gallery .work__item {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 0 !important;
+  float: none !important;
+  display: block !important;
+  height: auto !important;
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+.work__gallery .work__item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.work__gallery .work__item__pic {
+  position: relative !important;
+  width: 100% !important;
+  height: 300px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+}
+
+.work__gallery .work__item__pic.set-bg {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Hover overlay - ensure it works on all items */
+.work__gallery .work__item .work__item__hover {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 191, 231, 0.9) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  opacity: 0 !important;
+  transition: all 0.3s ease !important;
+  padding: 0 !important;
+  z-index: 10 !important;
+}
+
+.work__gallery .work__item:hover .work__item__hover {
+  opacity: 1 !important;
+}
+
+.work__gallery .work__item .work__item__hover__text {
+  text-align: center !important;
+  color: #ffffff !important;
+  margin-bottom: 20px !important;
+}
+
+.work__gallery .work__item .work__item__hover__text h4 {
+  color: #ffffff !important;
+  margin-bottom: 10px !important;
+  font-size: 20px !important;
+}
+
+.work__gallery .work__item .work__item__hover__text ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.work__gallery .work__item .work__item__hover__text li {
+  color: #ffffff !important;
+  margin: 5px 0 !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+.work__gallery .work__item .work__item__hover__text li:after {
+  display: none !important;
+}
+
+.work__gallery .work__item .work__item__hover a {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.work__gallery .work__item .work__item__hover a:hover {
+  color: #ffffff !important;
+  transform: scale(1.2) !important;
+}
+
+/* Isotope Grid Sizing - Better organized layout */
+.work__gallery .work__item.wide__item {
+  width: calc(66.666% - 10px) !important;
+  margin: 5px !important;
+}
+
+.work__gallery .work__item.large__item {
+  width: calc(50% - 10px) !important;
+  margin: 5px !important;
+}
+
+.work__gallery .work__item.small__item {
+  width: calc(33.333% - 10px) !important;
+  margin: 5px !important;
+}
+
+@media (max-width: 768px) {
+  .work__gallery .work__item.wide__item,
+  .work__gallery .work__item.large__item,
+  .work__gallery .work__item.small__item {
+    width: calc(100% - 10px) !important;
+    margin: 5px !important;
+  }
+
+  .filter-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Header Logo Text Styling */
+.header__logo__text {
+  font-family: "Play", sans-serif !important;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 15px;
+  vertical-align: middle;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.header__logo__text:hover {
+  color: #00bfe7;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .header__logo__text {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo__text {
+    font-size: 18px;
+    margin-left: 8px;
+  }
+}
+
+/* Footer Logo Text Styling */
+.footer__logo__text {
+  font-family: "Play", sans-serif !important;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 15px;
+  vertical-align: middle;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.footer__logo__text:hover {
+  color: #00bfe7;
+}
+
+/* Responsive adjustments for footer logo text */
+@media (max-width: 768px) {
+  .footer__logo__text {
+    font-size: 20px;
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__logo__text {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+}
+
+/* Portfolio Hover Effects */
+.portfolio__item__video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.portfolio__item__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 191, 231, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.portfolio__item__video:hover .portfolio__item__hover {
+  opacity: 1;
+}
+
+.portfolio__item__hover__text {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.portfolio__item__hover__text h4 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.portfolio__item__hover__text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio__item__hover__text li {
+  color: white;
+  margin: 5px 0;
+}
+
+.portfolio__item__hover a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio__item__hover a:hover {
+  transform: scale(1.2);
+}
