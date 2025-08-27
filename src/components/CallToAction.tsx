@@ -60,11 +60,12 @@ const CallToAction: React.FC = () => {
               viewport={{ once: true, amount: 0.5 }}
             >
               <motion.h2 variants={itemVariants}>
-                Ready to get started?
+                Ready to tell your story?
               </motion.h2>
               <motion.p variants={itemVariants}>
-                Let's discuss your project and create something amazing
-                together.
+                Whether it's your business growth, special celebration, or
+                creative vision, let's bring your ideas to life with
+                professional quality and cultural authenticity.
               </motion.p>
               <motion.div variants={itemVariants}>
                 <Link href="/contact">
@@ -74,7 +75,7 @@ const CallToAction: React.FC = () => {
                     whileHover="hover"
                     whileTap="tap"
                   >
-                    Get in touch
+                    Start Your Story
                   </motion.div>
                 </Link>
               </motion.div>

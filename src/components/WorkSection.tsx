@@ -29,11 +29,11 @@ const WorkSection: React.FC = () => {
       id: 1,
       image: "/img/work/work-1.jpg",
       type: "wide__item",
-      title: "VIP Auto Tires & Service",
-      tags: ["eCommerce", "Magento"],
+      title: "Ethiopian Cultural Documentary",
+      tags: ["Documentary", "Cultural Heritage"],
       hasHover: true,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "web",
+      category: "video",
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ const WorkSection: React.FC = () => {
       type: "small__item",
       hasHover: false,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "video",
+      category: "social",
     },
     {
       id: 3,
@@ -49,17 +49,17 @@ const WorkSection: React.FC = () => {
       type: "small__item",
       hasHover: false,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "photo",
+      category: "events",
     },
     {
       id: 4,
       image: "/img/work/work-4.jpg",
       type: "large__item",
-      title: "VIP Auto Tires & Service",
-      tags: ["eCommerce", "Magento"],
+      title: "Traditional Wedding Coverage",
+      tags: ["Wedding", "Ethiopian Culture"],
       hasHover: true,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "web",
+      category: "events",
     },
     {
       id: 5,
@@ -75,25 +75,25 @@ const WorkSection: React.FC = () => {
       type: "small__item",
       hasHover: false,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "photo",
+      category: "social",
     },
     {
       id: 7,
       image: "/img/work/work-7.jpg",
       type: "wide__item",
-      title: "VIP Auto Tires & Service",
-      tags: ["eCommerce", "Magento"],
+      title: "Business Commercial Campaign",
+      tags: ["Commercial", "Brand Promotion"],
       hasHover: true,
       videoUrl: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
-      category: "web",
+      category: "video",
     },
   ];
 
   const filters = [
     { key: "all", label: "All" },
-    { key: "web", label: "Web Design" },
-    { key: "video", label: "Video" },
-    { key: "photo", label: "Photography" },
+    { key: "video", label: "Video Production" },
+    { key: "events", label: "Event Coverage" },
+    { key: "social", label: "Social Media" },
   ];
 
   useEffect(() => {
@@ -203,7 +203,7 @@ const WorkSection: React.FC = () => {
           <div className="col-lg-12">
             <div className="section-title center-title">
               <span>Our Portfolio</span>
-              <h2>Latest Work</h2>
+              <h2>Stories We've Told</h2>
             </div>
           </div>
         </div>

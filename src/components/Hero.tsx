@@ -14,25 +14,25 @@ const Hero: React.FC = () => {
     {
       id: 1,
       background: "/img/hero/hero-1.jpg",
-      subtitle: "For website and video editing",
-      title: "Videographer's Portfolio",
-      buttonText: "See more about us",
-      buttonLink: "/about",
+      subtitle: "Creative company dedicated to growth",
+      title: "Zohar Media - Your Story, Beautifully Told",
+      buttonText: "Discover Our Services",
+      buttonLink: "/services",
     },
     {
       id: 2,
       background: "/img/hero/hero-1.jpg",
-      subtitle: "Professional video production",
-      title: "Creative Media Solutions",
-      buttonText: "View our work",
+      subtitle: "From video production to event planning",
+      title: "Complete Start-to-Finish Service",
+      buttonText: "View Our Portfolio",
       buttonLink: "/portfolio",
     },
     {
       id: 3,
       background: "/img/hero/hero-1.jpg",
-      subtitle: "Let's create something amazing",
-      title: "Get in touch today",
-      buttonText: "Contact us",
+      subtitle: "Ethiopian style, culture, and audience expertise",
+      title: "Professional & Personal Moments",
+      buttonText: "Let's Connect",
       buttonLink: "/contact",
     },
   ];
@@ -140,8 +140,8 @@ const Hero: React.FC = () => {
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
-                      <Link href="/services" className="primary-btn">
-                        See more about us
+                      <Link href="/about" className="primary-btn">
+                        Learn About Us
                       </Link>
                     </motion.div>
                   </div>

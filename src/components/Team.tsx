@@ -16,52 +16,52 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Amanda Stone",
-    role: "Videographer",
+    name: "Zara Yohannes",
+    role: "Creative Director",
     image: "/img/team/team-1.jpg",
     socials: [
       { platform: "facebook", url: "#", icon: "fa fa-facebook" },
       { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "dribbble", url: "#", icon: "fa fa-dribbble" },
+      { platform: "linkedin", url: "#", icon: "fa fa-linkedin" },
       { platform: "instagram", url: "#", icon: "fa fa-instagram" },
     ],
   },
   {
     id: 2,
-    name: "Amanda Stone",
-    role: "Videographer",
+    name: "Dawit Tesfaye",
+    role: "Video Producer",
     image: "/img/team/team-2.jpg",
     extraClass: "team__item--second",
     socials: [
       { platform: "facebook", url: "#", icon: "fa fa-facebook" },
-      { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "dribbble", url: "#", icon: "fa fa-dribbble" },
+      { platform: "youtube", url: "#", icon: "fa fa-youtube-play" },
+      { platform: "vimeo", url: "#", icon: "fa fa-vimeo" },
       { platform: "instagram", url: "#", icon: "fa fa-instagram" },
     ],
   },
   {
     id: 3,
-    name: "Amanda Stone",
-    role: "Videographer",
+    name: "Meron Girma",
+    role: "Event Coordinator",
     image: "/img/team/team-3.jpg",
     extraClass: "team__item--third",
     socials: [
       { platform: "facebook", url: "#", icon: "fa fa-facebook" },
       { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "dribbble", url: "#", icon: "fa fa-dribbble" },
+      { platform: "pinterest", url: "#", icon: "fa fa-pinterest" },
       { platform: "instagram", url: "#", icon: "fa fa-instagram" },
     ],
   },
   {
     id: 4,
-    name: "Amanda Stone",
-    role: "Videographer",
+    name: "Abel Bekele",
+    role: "Social Media Manager",
     image: "/img/team/team-4.jpg",
     extraClass: "team__item--four",
     socials: [
       { platform: "facebook", url: "#", icon: "fa fa-facebook" },
       { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "dribbble", url: "#", icon: "fa fa-dribbble" },
+      { platform: "linkedin", url: "#", icon: "fa fa-linkedin" },
       { platform: "instagram", url: "#", icon: "fa fa-instagram" },
     ],
   },
@@ -83,7 +83,7 @@ const Team: FC = () => {
           <div className="col-lg-12">
             <div className="section-title team__title text-center">
               <span>Nice to meet</span>
-              <h2>OUR Team</h2>
+              <h2>Our Creative Team</h2>
             </div>
           </div>
         </div>
@@ -119,8 +119,8 @@ const Team: FC = () => {
           {/* Button */}
           <div className="col-lg-12 p-0">
             <div className="team__btn text-center mt-6">
-              <Link href="#" className="primary-btn">
-                Meet Our Team
+              <Link href="/about" className="primary-btn">
+                Join Our Team
               </Link>
             </div>
           </div>

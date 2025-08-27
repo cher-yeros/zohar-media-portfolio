@@ -23,14 +23,7 @@ const Layout: React.FC<LayoutProps> = ({
           content="Zohar Media Portfolio - Professional videography and media services"
         />
 
-        {/* Bootstrap CSS */}
-        {/* <link rel="stylesheet" href="/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/elegant-icons.css" />
-        <link rel="stylesheet" href="/css/owl.carousel.min.css" />
-        <link rel="stylesheet" href="/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/css/slicknav.min.css" />
-        <link rel="stylesheet" href="/css/style.css" /> */}
+        {/* Bootstrap CSS - handled in globals.css */}
       </Head>
 
       {/* <div id="preloder">
@@ -41,18 +34,7 @@ const Layout: React.FC<LayoutProps> = ({
       <main>{children}</main>
       <Footer />
 
-      {/* Bootstrap JS - Using Next.js Script component for proper loading */}
-      {/* <Script src="/js/jquery-3.3.1.min.js" strategy="afterInteractive" />
-      <Script src="/js/bootstrap.min.js" strategy="afterInteractive" />
-      <Script
-        src="/js/jquery.magnific-popup.min.js"
-        strategy="afterInteractive"
-      />
-      <Script src="/js/mixitup.min.js" strategy="afterInteractive" />
-      <Script src="/js/masonry.pkgd.min.js" strategy="afterInteractive" />
-      <Script src="/js/jquery.slicknav.js" strategy="afterInteractive" />
-      <Script src="/js/owl.carousel.min.js" strategy="afterInteractive" />
-      <Script src="/js/main.js" strategy="afterInteractive" /> */}
+      {/* JavaScript handled by individual components as needed */}
     </>
   );
 };

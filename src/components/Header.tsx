@@ -3,10 +3,18 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState("home");
+  const pathname = usePathname();
+
+  // Helper function to check if a path is active
+  const isActivePath = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   // Handle mobile menu toggle
   const toggleMobileMenu = () => {
@@ -28,6 +36,11 @@ const Header: React.FC = () => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header className="header">
@@ -54,41 +67,47 @@ const Header: React.FC = () => {
                 }`}
               >
                 <ul>
-                  <li className={activePage === "home" ? "active" : ""}>
-                    <Link href="/" onClick={() => setActivePage("home")}>
+                  <li className={isActivePath("/") ? "active" : ""}>
+                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                       Home
                     </Link>
                   </li>
-                  <li className={activePage === "about" ? "active" : ""}>
-                    <Link href="/about" onClick={() => setActivePage("about")}>
+                  <li className={isActivePath("/about") ? "active" : ""}>
+                    <Link
+                      href="/about"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       About
                     </Link>
                   </li>
-                  <li className={activePage === "portfolio" ? "active" : ""}>
+                  <li className={isActivePath("/portfolio") ? "active" : ""}>
                     <Link
                       href="/portfolio"
-                      onClick={() => setActivePage("portfolio")}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Portfolio
                     </Link>
                   </li>
-                  <li className={activePage === "services" ? "active" : ""}>
+                  <li className={isActivePath("/services") ? "active" : ""}>
                     <Link
                       href="/services"
-                      onClick={() => setActivePage("services")}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Services
                     </Link>
                   </li>
-                  <li className={activePage === "blog" ? "active" : ""}>
-                    <Link href="/blog" onClick={() => setActivePage("blog")}>
+                  {/* <li className={isActivePath("/blog") ? "active" : ""}>
+                    <Link
+                      href="/blog"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Blog
                     </Link>
-                  </li>
-                  <li className={activePage === "contact" ? "active" : ""}>
+                  </li> */}
+                  <li className={isActivePath("/contact") ? "active" : ""}>
                     <Link
                       href="/contact"
-                      onClick={() => setActivePage("contact")}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Contact
                     </Link>

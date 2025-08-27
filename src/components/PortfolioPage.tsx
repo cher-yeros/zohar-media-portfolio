@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import "magnific-popup/dist/magnific-popup.css";
 
 export default function PortfolioPage() {
   const [isClient, setIsClient] = useState(false);
@@ -30,31 +29,7 @@ export default function PortfolioPage() {
       }
     };
 
-    const initMagnificPopup = async () => {
-      try {
-        const $ = (await import("jquery")).default;
-        const magnificPopup = (await import("magnific-popup")).default;
-
-        // Initialize Magnific Popup for video popups
-        $(".video-popup").magnificPopup({
-          type: "iframe",
-          iframe: {
-            patterns: {
-              youtube: {
-                index: "youtube.com/",
-                id: "v=",
-                src: "//www.youtube.com/embed/%id%?autoplay=1",
-              },
-            },
-          },
-        });
-      } catch (error) {
-        console.error("Failed to load Magnific Popup:", error);
-      }
-    };
-
     initIsotope();
-    initMagnificPopup();
 
     return () => isotope.current?.destroy();
   }, [isClient]);
@@ -225,12 +200,9 @@ export default function PortfolioPage() {
                         ))}
                       </ul>
                     </div>
-                    <a
-                      href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                      className="video-popup"
-                    >
-                      <i className="fa fa-play"></i>
-                    </a>
+                    <div className="portfolio__item__view">
+                      <i className="fa fa-eye"></i>
+                    </div>
                   </div>
                 </div>
                 <div className="portfolio__item__text">

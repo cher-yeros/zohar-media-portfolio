@@ -9,34 +9,34 @@ import Image from "next/image";
 export default function Testimonial() {
   const testimonials = [
     {
-      text: "Delivers such a great service that it can benefit all kinds of people from any number of industries.",
+      text: "Zohar Media perfectly captured our wedding with authentic Ethiopian traditions. Their understanding of our culture made all the difference in telling our story beautifully.",
       img: "/img/testimonial/ta-1.jpg",
-      name: "Krista Attorn",
-      role: "Web Designer",
+      name: "Almaz Tadesse",
+      role: "Bride & Entrepreneur",
     },
     {
-      text: "Videographer delivers such a great service that it can benefit all kinds of people from any number.",
+      text: "Working with Zohar Media for our business promotion was exceptional. They created engaging social media content that truly resonated with our Ethiopian community.",
       img: "/img/testimonial/ta-2.jpg",
-      name: "Krista Attorn",
-      role: "Web Designer",
+      name: "Daniel Haile",
+      role: "Restaurant Owner",
     },
     {
-      text: "Videographer delivers such a great service that it can benefit all kinds of people from any number.",
+      text: "From planning to execution, Zohar Media made our graduation celebration unforgettable. The video quality and attention to cultural details were outstanding.",
       img: "/img/testimonial/ta-3.jpg",
-      name: "Krista Attorn",
-      role: "Web Designer",
+      name: "Sara Bekele",
+      role: "Medical Graduate",
     },
     {
-      text: "Delivers such a great service that it can benefit all kinds of people from any number of industries.",
+      text: "Their event planning service for our corporate launch was professional and seamless. They understand both business needs and Ethiopian cultural elements perfectly.",
       img: "/img/testimonial/ta-1.jpg",
-      name: "Krista Attorn",
-      role: "Web Designer",
+      name: "Michael Getachew",
+      role: "Tech Entrepreneur",
     },
     {
-      text: "Videographer delivers such a great service that it can benefit all kinds of people from any number.",
+      text: "Zohar Media's social media management has grown our following significantly. They create content that speaks to our community in an authentic way.",
       img: "/img/testimonial/ta-2.jpg",
-      name: "Krista Attorn",
-      role: "Web Designer",
+      name: "Hanan Ahmed",
+      role: "Fashion Designer",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function Testimonial() {
           <div className="col-lg-12">
             <div className="section-title center-title">
               <span>Loved By Clients</span>
-              <h2>What clients say?</h2>
+              <h2>Stories from our community</h2>
             </div>
           </div>
         </div>

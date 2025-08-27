@@ -14,14 +14,14 @@ const services: ServiceItem[] = [
   {
     id: 1,
     icon: "/img/icons/si-3.png",
-    title: "Video distribution",
-    description: "Whether you’re halfway through the editing process, or you.",
+    title: "Complete Service",
+    description: "Start-to-finish service for all your creative needs.",
   },
   {
     id: 2,
     icon: "/img/icons/si-4.png",
-    title: "Video hosting",
-    description: "Whether you’re halfway through the editing process, or you.",
+    title: "Cultural Expertise",
+    description: "Deep understanding of Ethiopian style and audience.",
   },
 ];
 
@@ -76,7 +76,7 @@ const About: FC = () => {
           <div className="col-lg-6">
             <div className="about__text">
               <div className="section-title">
-                <span>About videograph</span>
+                <span>About Zohar Media</span>
                 <h2>Who we are?</h2>
               </div>
 
@@ -103,10 +103,11 @@ const About: FC = () => {
               {/* Description */}
               <div className="about__text__desc mt-4">
                 <p>
-                  Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an
-                  award-winning, full-service production company specializing in
-                  commercial, broadcast, tourism & action sport video production
-                  services has been featured.
+                  Zohar Media is a creative company dedicated to helping you
+                  grow your brand, tell your story, and celebrate life's special
+                  moments. We offer complete start-to-finish service with
+                  quality work at fair prices, trusted by our clients for their
+                  most important occasions and business needs.
                 </p>
               </div>
             </div>

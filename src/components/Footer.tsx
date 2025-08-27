@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
+    console.log("Newsletter subscription:", email);
+    setEmail("");
   };
 
   return (
@@ -21,8 +21,16 @@ const Footer: React.FC = () => {
           <div className="row">
             <div className="col-lg-6 col-md-6">
               <div className="footer__top__logo">
-                <Link href="/" style={{ display: "flex", alignItems: "center" }}>
-                  <Image src="/img/logo.png" alt="Zohar Media Logo" width={80} height={80} />
+                <Link
+                  href="/"
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <Image
+                    src="/img/logo.png"
+                    alt="Zohar Media Logo"
+                    width={80}
+                    height={80}
+                  />
                   <span className="footer__logo__text">Zohar Media</span>
                 </Link>
               </div>
@@ -54,8 +62,10 @@ const Footer: React.FC = () => {
               <div className="footer__option__item">
                 <h5>About us</h5>
                 <p>
-                  Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, 
-                  full-service production company specializing in creative video content.
+                  Zohar Media is a creative company dedicated to helping you
+                  grow your brand, tell your story, and celebrate life's special
+                  moments with deep understanding of Ethiopian style, culture,
+                  and audience.
                 </p>
                 <Link href="/about" className="read__more">
                   Read more <span className="arrow_right"></span>
@@ -66,10 +76,18 @@ const Footer: React.FC = () => {
               <div className="footer__option__item">
                 <h5>Who we are</h5>
                 <ul>
-                  <li><Link href="/team">Team</Link></li>
-                  <li><Link href="/careers">Careers</Link></li>
-                  <li><Link href="/contact">Contact us</Link></li>
-                  <li><Link href="/locations">Locations</Link></li>
+                  <li>
+                    <Link href="/team">Team</Link>
+                  </li>
+                  <li>
+                    <Link href="/careers">Careers</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Contact us</Link>
+                  </li>
+                  <li>
+                    <Link href="/locations">Locations</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -77,10 +95,18 @@ const Footer: React.FC = () => {
               <div className="footer__option__item">
                 <h5>Our work</h5>
                 <ul>
-                  <li><Link href="/portfolio">Feature</Link></li>
-                  <li><Link href="/portfolio">Latest</Link></li>
-                  <li><Link href="/portfolio">Browse Archive</Link></li>
-                  <li><Link href="/services">Video for web</Link></li>
+                  <li>
+                    <Link href="/portfolio">Video Production</Link>
+                  </li>
+                  <li>
+                    <Link href="/portfolio">Event Coverage</Link>
+                  </li>
+                  <li>
+                    <Link href="/portfolio">Social Media Content</Link>
+                  </li>
+                  <li>
+                    <Link href="/services">Event Planning</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -88,8 +114,9 @@ const Footer: React.FC = () => {
               <div className="footer__option__item">
                 <h5>Newsletter</h5>
                 <p>
-                  Stay updated with our latest projects and industry insights. 
-                  Subscribe to our newsletter for exclusive content.
+                  Stay updated with our latest projects, Ethiopian cultural
+                  events, and creative insights. Subscribe to our newsletter for
+                  exclusive content and special offers.
                 </p>
                 <form onSubmit={handleNewsletterSubmit}>
                   <input
@@ -111,7 +138,8 @@ const Footer: React.FC = () => {
           <div className="row">
             <div className="col-lg-12 text-center">
               <p className="footer__copyright__text">
-                Copyright &copy; {new Date().getFullYear()} Zohar Media. All rights reserved.
+                Copyright &copy; {new Date().getFullYear()} Zohar Media. All
+                rights reserved.
               </p>
             </div>
           </div>

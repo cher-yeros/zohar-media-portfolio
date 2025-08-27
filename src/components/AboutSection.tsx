@@ -59,10 +59,10 @@ const AboutSection: React.FC = () => {
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div className="section-title" variants={itemVariants}>
-                <span>About us</span>
+                <span>About Zohar Media</span>
                 <h2>
-                  We are the best in <br />
-                  our field
+                  Everyone has a story to tell. <br />
+                  We help you share it beautifully.
                 </h2>
               </motion.div>
               <motion.div className="about__pic__item" variants={itemVariants}>
@@ -92,19 +92,19 @@ const AboutSection: React.FC = () => {
               </motion.div>
               <motion.div className="about__text__desc" variants={itemVariants}>
                 <p>
-                  Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an
-                  award-winning, full-service production company specializing in
-                  creative video content. We work with brands, agencies, and
-                  production companies to create compelling visual stories that
-                  engage and inspire audiences.
+                  Zohar Media is a creative company dedicated to helping you
+                  grow your brand, tell your story, and celebrate life's special
+                  moments. We do a wide range of work — from video production
+                  and social media management to event planning and capturing
+                  memories.
                 </p>
                 <p>
-                  Our team of experienced professionals brings together
-                  expertise in cinematography, editing, sound design, and
-                  post-production to deliver high-quality content that meets the
-                  highest industry standards. We pride ourselves on our
-                  attention to detail, creative vision, and commitment to
-                  excellence.
+                  Whether you're a business promoting your brand, or an
+                  individual celebrating a wedding, birthday, or graduation, we
+                  bring your ideas to life professionally and effortlessly. Our
+                  deep understanding of Ethiopian style, culture, and audience
+                  ensures your message resonates perfectly with your target
+                  community.
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}

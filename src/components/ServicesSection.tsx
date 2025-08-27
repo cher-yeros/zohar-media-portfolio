@@ -8,27 +8,27 @@ const ServicesSection: React.FC = () => {
   const services = [
     {
       icon: "si-1.png",
-      title: "Motion graphics",
+      title: "Video & Media Production",
       description:
-        "Whether you're halfway through the editing process, or you haven't even started, our post production services can put the finishing touches.",
+        "Create stunning videos for business and personal use, including TV commercials, social media content, documentaries, event coverage, and professional editing with music, effects, and subtitles.",
     },
     {
       icon: "si-2.png",
-      title: "Scriptwriting and editing",
+      title: "Social Media Management",
       description:
-        "Whether you're halfway through the editing process, or you haven't even started, our post production services can put the finishing touches.",
+        "Grow your followers and maintain your brand online. We plan and create posts, design content, manage comments and messages, and provide performance reports so you can focus on your business.",
     },
     {
       icon: "si-3.png",
-      title: "Video distribution",
+      title: "Event Planning & Production",
       description:
-        "Whether you're halfway through the editing process, or you haven't even started, our post production services can put the finishing touches.",
+        "Organize and manage events of all sizes including weddings, parties, corporate events, launches, and live shows with complete stage, lighting, sound, and video production.",
     },
     {
       icon: "si-4.png",
-      title: "Video hosting",
+      title: "Professional Editing",
       description:
-        "Whether you're halfway through the editing process, or you haven't even started, our post production services can put the finishing touches.",
+        "High-quality post-production services including professional editing, color correction, sound design, motion graphics, and visual effects to bring your vision to life.",
     },
   ];
 
@@ -85,12 +85,13 @@ const ServicesSection: React.FC = () => {
             >
               <div className="section-title">
                 <span>Our services</span>
-                <h2>What We do?</h2>
+                <h2>What We Do?</h2>
               </div>
               <p>
-                If you hire a videographer of our team you will get a video
-                professional to make a custom video for your business and, once
-                the project is over.
+                Zohar Media offers comprehensive creative services to help you
+                grow your brand, tell your story, and celebrate life's special
+                moments. From video production to event planning, we bring your
+                ideas to life professionally and effortlessly.
               </p>
               <Link href="/services" className="primary-btn">
                 View all services
