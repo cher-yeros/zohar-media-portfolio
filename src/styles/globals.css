@@ -997,3 +997,164 @@ p {
 .portfolio__item__hover a:hover {
   transform: scale(1.2);
 }
+
+/* Portfolio Showcase Masonry Layout */
+.portfolio-showcase {
+  background: #100028;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.masonry-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.masonry-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #1a083d;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 191, 231, 0.2);
+}
+
+.portfolio-item-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.portfolio-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-image img {
+  transform: scale(1.1);
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 191, 231, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  opacity: 1;
+}
+
+.portfolio-item-overlay-content h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-family: "Play", sans-serif;
+  font-weight: 600;
+}
+
+.portfolio-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio-item-tags .tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.portfolio-item-category {
+  background: rgba(255, 255, 255, 0.9);
+  color: #00bfe7;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Play", sans-serif;
+}
+
+/* Responsive Design for Masonry */
+@media (max-width: 1200px) {
+  .masonry-container {
+    gap: 15px;
+  }
+
+  .masonry-column {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .masonry-column {
+    gap: 15px;
+  }
+
+  .portfolio-showcase {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-showcase {
+    padding: 40px 0;
+  }
+
+  .portfolio-item-overlay-content h4 {
+    font-size: 18px;
+  }
+
+  .portfolio-item-tags .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .portfolio-item-category {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}
