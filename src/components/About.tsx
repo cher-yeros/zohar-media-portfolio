@@ -1,7 +1,8 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Image from "next/image";
+import Aos from "aos";
 
 interface ServiceItem {
   id: number;
@@ -26,15 +27,27 @@ const services: ServiceItem[] = [
 ];
 
 const About: FC = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 600,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+  }, []);
   return (
     <section className="about spad">
       <div className="container">
         <div className="row">
           {/* Left side - images */}
-          <div className="col-lg-6">
+          <div className="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <div className="about__pic">
               <div className="row">
-                <div className="col-lg-6 col-md-6 col-sm-6">
+                <div
+                  className="col-lg-6 col-md-6 col-sm-6"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   <div className="about__pic__item about__pic__item--large relative w-full h-[350px]">
                     <Image
                       src="/img/about/about-1.jpg"
@@ -46,7 +59,11 @@ const About: FC = () => {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6">
                   <div className="row">
-                    <div className="col-lg-12">
+                    <div
+                      className="col-lg-12"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
                       <div className="about__pic__item relative w-full h-[170px] mb-4">
                         <Image
                           src="/img/about/about-2.jpg"
@@ -56,7 +73,11 @@ const About: FC = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12">
+                    <div
+                      className="col-lg-12"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                    >
                       <div className="about__pic__item relative w-full h-[170px]">
                         <Image
                           src="/img/about/about-3.jpg"
@@ -73,19 +94,32 @@ const About: FC = () => {
           </div>
 
           {/* Right side - text */}
-          <div className="col-lg-6">
+          <div className="col-lg-6" data-aos="fade-left" data-aos-delay="150">
             <div className="about__text">
-              <div className="section-title">
+              <div
+                className="section-title"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
                 <span>About Zohar Media</span>
                 <h2>Who we are?</h2>
               </div>
 
               {/* Services */}
               <div className="row">
-                {services.map((service) => (
-                  <div key={service.id} className="col-lg-6 col-md-6 col-sm-6">
+                {services.map((service, index) => (
+                  <div
+                    key={service.id}
+                    className="col-lg-6 col-md-6 col-sm-6"
+                    data-aos="fade-up"
+                    data-aos-delay={300 + index * 100}
+                  >
                     <div className="services__item">
-                      <div className="services__item__icon">
+                      <div
+                        className="services__item__icon"
+                        data-aos="zoom-in"
+                        data-aos-delay={350 + index * 100}
+                      >
                         <Image
                           src={service.icon}
                           alt={service.title}
@@ -101,13 +135,17 @@ const About: FC = () => {
               </div>
 
               {/* Description */}
-              <div className="about__text__desc mt-4">
+              <div
+                className="about__text__desc mt-4"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <p>
                   Zohar Media is a creative company dedicated to helping you
-                  grow your brand, tell your story, and celebrate life's special
-                  moments. We offer complete start-to-finish service with
-                  quality work at fair prices, trusted by our clients for their
-                  most important occasions and business needs.
+                  grow your brand, tell your story, and celebrate life&apos;s
+                  special moments. We offer complete start-to-finish service
+                  with quality work at fair prices, trusted by our clients for
+                  their most important occasions and business needs.
                 </p>
               </div>
             </div>

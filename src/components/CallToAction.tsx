@@ -2,48 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const CallToAction: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    },
-    tap: {
-      scale: 0.95,
-    },
-  };
-
   return (
     <section
       className="callto spad set-bg"
@@ -52,34 +12,38 @@ const CallToAction: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <motion.div
+            <div
               className="callto__text"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="100"
             >
-              <motion.h2 variants={itemVariants}>
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="200"
+              >
                 Ready to tell your story?
-              </motion.h2>
-              <motion.p variants={itemVariants}>
-                Whether it's your business growth, special celebration, or
-                creative vision, let's bring your ideas to life with
+              </h2>
+              <p
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="300"
+              >
+                Whether it&apos;s your business growth, special celebration, or
+                creative vision, let&apos;s bring your ideas to life with
                 professional quality and cultural authenticity.
-              </motion.p>
-              <motion.div variants={itemVariants}>
+              </p>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="400"
+              >
                 <Link href="/contact">
-                  <motion.div
-                    className="primary-btn"
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-                    Start Your Story
-                  </motion.div>
+                  <div className="primary-btn">Start Your Story</div>
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

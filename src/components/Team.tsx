@@ -1,7 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface TeamMember {
@@ -79,7 +78,12 @@ const Team: FC = () => {
     >
       <div className="container relative z-10">
         {/* Section Title */}
-        <div className="row">
+        <div
+          className="row"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="100"
+        >
           <div className="col-lg-12">
             <div className="section-title team__title text-center">
               <span>Nice to meet</span>
@@ -90,8 +94,14 @@ const Team: FC = () => {
 
         {/* Team Members */}
         <div className="row">
-          {teamMembers.map((member) => (
-            <div key={member.id} className="col-lg-3 col-md-6 col-sm-6 p-0">
+          {teamMembers.map((member, index) => (
+            <div
+              key={member.id}
+              className="col-lg-3 col-md-6 col-sm-6 p-0"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay={200 + index * 100}
+            >
               <div
                 className={`team__item ${member.extraClass || ""} relative`}
                 style={{
@@ -117,7 +127,12 @@ const Team: FC = () => {
           ))}
 
           {/* Button */}
-          <div className="col-lg-12 p-0">
+          <div
+            className="col-lg-12 p-0"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="600"
+          >
             <div className="team__btn text-center mt-6">
               <Link href="/about" className="primary-btn">
                 Join Our Team

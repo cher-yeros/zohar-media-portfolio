@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import { useEffect } from "react";
+import Aos from "aos";
 
 export default function Testimonial() {
   const testimonials = [
@@ -47,7 +49,7 @@ export default function Testimonial() {
     >
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+          <div className="col-lg-12" data-aos="fade-up">
             <div className="section-title center-title">
               <span>Loved By Clients</span>
               <h2>Stories from our community</h2>

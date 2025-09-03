@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+
+import "aos/dist/aos.css";
+
 import Script from "next/script";
 import { Play, Josefin_Sans } from "next/font/google";
 
@@ -89,6 +92,17 @@ export default function RootLayout({
       <Script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></Script>
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></Script>
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></Script>
+      <Script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></Script>
+      <Script id="aos-init">
+        {`
+          AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+          });
+        `}
+      </Script>
     </html>
   );
 }

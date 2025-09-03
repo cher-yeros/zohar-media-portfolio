@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Aos from "aos";
 
 interface PortfolioItem {
   id: number;
@@ -15,6 +16,15 @@ const PortfolioShowcase: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   const [columns, setColumns] = useState<PortfolioItem[][]>([[], [], []]);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 600,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+  }, []);
 
   const portfolioItems: PortfolioItem[] = [
     {
@@ -158,7 +168,7 @@ const PortfolioShowcase: React.FC = () => {
   return (
     <section className="portfolio-showcase spad">
       <div className="container">
-        <div className="row">
+        <div className="row " data-aos="fade-up">
           <div className="col-lg-12">
             <div className="section-title center-title">
               <span>Our Portfolio</span>
@@ -169,6 +179,7 @@ const PortfolioShowcase: React.FC = () => {
 
         <motion.div
           className="masonry-container"
+          data-aos="fade-up"
           ref={containerRef}
           variants={containerVariants}
           initial="hidden"
@@ -180,10 +191,11 @@ const PortfolioShowcase: React.FC = () => {
                 <motion.div
                   key={item.id}
                   className="portfolio-item"
+                  data-aos="fade-up"
                   variants={itemVariants}
                   whileHover="hover"
                 >
-                  <div className="portfolio-item-image">
+                  <div className="portfolio-item-image" data-aos="fade-up">
                     <img src={item.image} alt={item.title} loading="lazy" />
                     <div className="portfolio-item-overlay">
                       <div className="portfolio-item-overlay-content">

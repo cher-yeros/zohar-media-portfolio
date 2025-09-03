@@ -1,9 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import PortfolioPage from "@/components/PortfolioPage";
+import Aos from "aos";
 
 export default function Portfolio() {
+  useEffect(() => {
+    Aos.init({
+      duration: 600,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+  }, []);
+
   const portfolioItems = [
     {
       id: 1,
@@ -76,13 +87,20 @@ export default function Portfolio() {
       <section
         className="breadcrumb-option spad set-bg"
         style={{ backgroundImage: "url(/img/breadcrumb-bg.jpg)" }}
+        data-aos="fade-up"
       >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="breadcrumb__text">
-                <h2>Portfolio</h2>
-                <div className="breadcrumb__links">
+              <div className="breadcrumb__text text-center">
+                <h2 data-aos="fade-up" data-aos-delay="100">
+                  Portfolio
+                </h2>
+                <div
+                  className="breadcrumb__links"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   <Link href="/">Home</Link>
                   <span>Portfolio</span>
                 </div>

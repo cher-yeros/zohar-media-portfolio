@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
-import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -37,47 +36,6 @@ const Hero: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-      scale: 0.95,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    },
-    tap: {
-      scale: 0.95,
-    },
-  };
-
   return (
     <section className="hero">
       <Swiper
@@ -107,43 +65,48 @@ const Hero: React.FC = () => {
               <div className="container">
                 <div className="row">
                   <div className="col-lg-6">
-                    <motion.div
+                    <div
                       className="hero__text"
-                      variants={containerVariants}
-                      initial="hidden"
-                      animate="visible"
+                      data-aos="fade-up"
+                      data-aos-duration="800"
+                      data-aos-delay="200"
                     >
-                      <motion.span
+                      <span
                         className="hero__subtitle"
-                        variants={itemVariants}
+                        data-aos="fade-up"
+                        data-aos-duration="600"
+                        data-aos-delay="300"
                       >
                         {slide.subtitle}
-                      </motion.span>
-                      <motion.h2
+                      </span>
+                      <h2
                         className="hero__title"
-                        variants={itemVariants}
+                        data-aos="fade-up"
+                        data-aos-duration="600"
+                        data-aos-delay="400"
                       >
                         {slide.title}
-                      </motion.h2>
-                      <motion.div variants={itemVariants}>
+                      </h2>
+                      <div
+                        data-aos="fade-up"
+                        data-aos-duration="600"
+                        data-aos-delay="500"
+                      >
                         <Link href={slide.buttonLink}>
-                          <motion.div
-                            className="primary-btn"
-                            variants={buttonVariants}
-                            whileHover="hover"
-                            whileTap="tap"
-                          >
-                            {slide.buttonText}
-                          </motion.div>
+                          <div className="primary-btn">{slide.buttonText}</div>
                         </Link>
-                      </motion.div>
-                    </motion.div>
+                      </div>
+                    </div>
 
-                    <motion.div variants={itemVariants}>
+                    <div
+                      data-aos="fade-up"
+                      data-aos-duration="600"
+                      data-aos-delay="600"
+                    >
                       <Link href="/about" className="primary-btn">
                         Learn About Us
                       </Link>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>

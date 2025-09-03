@@ -1,17 +1,25 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Aos from "aos";
+import { IsotopeOptions } from "isotope-layout";
 
 export default function PortfolioPage() {
   const [isClient, setIsClient] = useState(false);
   const [filterKey, setFilterKey] = useState("*");
   const isotope = useRef<{
     destroy: () => void;
-    arrange: (options: any) => void;
+    arrange: (options: IsotopeOptions) => void;
   } | null>(null);
 
   useEffect(() => {
     setIsClient(true);
+    // Aos.init({
+    //   duration: 600,
+    //   easing: "ease-in-out",
+    //   once: true,
+    //   mirror: false,
+    // });
   }, []);
 
   useEffect(() => {
@@ -130,7 +138,11 @@ export default function PortfolioPage() {
         {/* Filter Menu */}
         <div className="row">
           <div className="col-lg-12">
-            <div className="portfolio__filter">
+            <div
+              className="portfolio__filter"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <button
                 className={`filter-btn ${filterKey === "*" ? "active" : ""}`}
                 onClick={handleFilterKeyChange("*")}
@@ -177,10 +189,12 @@ export default function PortfolioPage() {
 
         {/* Gallery */}
         <div className="row filter-container">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
               key={item.id}
               className={`col-lg-4 col-md-6 col-sm-6 filter-item ${item.category}`}
+              // data-aos="fade-up"
+              // data-aos-delay={200 + index * 100}
             >
               <div className="portfolio__item">
                 <div className="portfolio__item__video">

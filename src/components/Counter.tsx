@@ -44,14 +44,21 @@ const counters: CounterItem[] = [
 
 const Counter: FC = () => {
   return (
-    <section className="counter">
+    <section className="counter " data-aos="fade-up">
       <div className="container">
         <div className="counter__content">
           <div className="row">
             {counters.map((item) => (
-              <div key={item.id} className="col-lg-3 col-md-6 col-sm-6">
+              <div
+                key={item.id}
+                className="col-lg-3 col-md-6 col-sm-6"
+                data-aos="fade-up"
+              >
                 <div className={`counter__item ${item.extraClass || ""}`}>
-                  <div className="counter__item__text text-center">
+                  <div
+                    className="counter__item__text text-center"
+                    data-aos="fade-up"
+                  >
                     <Image
                       src={item.icon}
                       alt={item.label}
@@ -59,10 +66,10 @@ const Counter: FC = () => {
                       height={60}
                       className="mx-auto mb-3"
                     />
-                    <h2 className="counter_num">
+                    <h2 className="counter_num" data-aos="fade-up">
                       <CountUp end={item.number} duration={3} />
                     </h2>
-                    <p>{item.label}</p>
+                    <p data-aos="fade-up">{item.label}</p>
                   </div>
                 </div>
               </div>

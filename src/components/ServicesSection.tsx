@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const ServicesSection: React.FC = () => {
   const services = [
@@ -32,56 +31,16 @@ const ServicesSection: React.FC = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-      scale: 0.95,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const iconVariants = {
-    hover: {
-      scale: 1.1,
-      rotate: 5,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
     <section className="services spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
-            <motion.div
+            <div
               className="services__title"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="100"
             >
               <div className="section-title">
                 <span>Our services</span>
@@ -96,43 +55,31 @@ const ServicesSection: React.FC = () => {
               <Link href="/services" className="primary-btn">
                 View all services
               </Link>
-            </motion.div>
+            </div>
           </div>
           <div className="col-lg-8">
-            <motion.div
-              className="row"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
+            <div className="row">
               {services.map((service, index) => (
-                <motion.div
+                <div
                   key={index}
                   className="col-lg-6 col-md-6 col-sm-6"
-                  variants={itemVariants}
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={200 + index * 100}
                 >
-                  <motion.div
-                    className="services__item"
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.div
-                      className="services__item__icon"
-                      variants={iconVariants}
-                      whileHover="hover"
-                    >
+                  <div className="services__item">
+                    <div className="services__item__icon">
                       <img
                         src={`/img/icons/${service.icon}`}
                         alt={service.title}
                       />
-                    </motion.div>
+                    </div>
                     <h4>{service.title}</h4>
                     <p>{service.description}</p>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
