@@ -1,12 +1,10 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
-import { useEffect } from "react";
-import Aos from "aos";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testimonial() {
   const testimonials = [

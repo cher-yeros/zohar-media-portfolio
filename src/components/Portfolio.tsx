@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+// Lightbox removed - using simple image display instead
 
 const photos = [
   "/img/gallery/g1.jpg",
@@ -14,23 +12,13 @@ const photos = [
 ];
 
 export default function Gallery() {
-  const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
-
   return (
     <section className="py-12">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center">Photo Gallery</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {photos.map((src, i) => (
-            <div
-              key={i}
-              className="relative w-full h-60 cursor-pointer"
-              onClick={() => {
-                setIndex(i);
-                setOpen(true);
-              }}
-            >
+            <div key={i} className="relative w-full h-60">
               <Image
                 src={src}
                 alt={`Gallery image ${i + 1}`}
@@ -41,14 +29,6 @@ export default function Gallery() {
           ))}
         </div>
       </div>
-
-      {/* Lightbox */}
-      <Lightbox
-        open={open}
-        index={index}
-        close={() => setOpen(false)}
-        slides={photos.map((src) => ({ src }))}
-      />
     </section>
   );
 }

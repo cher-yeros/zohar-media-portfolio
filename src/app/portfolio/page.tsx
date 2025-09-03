@@ -87,20 +87,13 @@ export default function Portfolio() {
       <section
         className="breadcrumb-option spad set-bg"
         style={{ backgroundImage: "url(/img/breadcrumb-bg.jpg)" }}
-        data-aos="fade-up"
       >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcrumb__text text-center">
-                <h2 data-aos="fade-up" data-aos-delay="100">
-                  Portfolio
-                </h2>
-                <div
-                  className="breadcrumb__links"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
+                <h2>Portfolio</h2>
+                <div className="breadcrumb__links">
                   <Link href="/">Home</Link>
                   <span>Portfolio</span>
                 </div>

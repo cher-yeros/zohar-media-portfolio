@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import Aos from "aos";
 import { IsotopeOptions } from "isotope-layout";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function PortfolioPage() {
   const [isClient, setIsClient] = useState(false);

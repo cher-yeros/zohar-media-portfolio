@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import Aos from "aos";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
 interface PortfolioItem {
   id: number;
@@ -196,6 +196,12 @@ const PortfolioShowcase: React.FC = () => {
                   whileHover="hover"
                 >
                   <div className="portfolio-item-image" data-aos="fade-up">
+                    <a
+                      href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                      className="play-btn video-popup"
+                    >
+                      <i className="fa fa-play"></i>
+                    </a>
                     <img src={item.image} alt={item.title} loading="lazy" />
                     <div className="portfolio-item-overlay">
                       <div className="portfolio-item-overlay-content">

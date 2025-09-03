@@ -75,20 +75,13 @@ export default function Services() {
       <section
         className="breadcrumb-option spad set-bg"
         style={{ backgroundImage: "url(/img/breadcrumb-bg.jpg)" }}
-        data-aos="fade-up"
       >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcrumb__text text-center">
-                <h2 data-aos="fade-up" data-aos-delay="100">
-                  Our services
-                </h2>
-                <div
-                  className="breadcrumb__links"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
+                <h2>Our services</h2>
+                <div className="breadcrumb__links">
                   <Link href="/">Home</Link>
                   <span>Services</span>
                 </div>
@@ -99,7 +92,7 @@ export default function Services() {
       </section>
 
       {/* Services Section */}
-      <section className="services spad" data-aos="fade-up">
+      <section className="services spad">
         <div className="container">
           <div className="row">
             <div className="col-lg-4">
@@ -162,7 +155,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="process services spad" data-aos="fade-up">
+      <section className="process services spad">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

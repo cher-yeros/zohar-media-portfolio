@@ -72,6 +72,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css"
         />
+        <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body className={`${play.className} ${josefinSans.className}`}>
         {children}

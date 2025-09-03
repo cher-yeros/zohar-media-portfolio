@@ -48,9 +48,9 @@ const ServicesSection: React.FC = () => {
               </div>
               <p>
                 Zohar Media offers comprehensive creative services to help you
-                grow your brand, tell your story, and celebrate life's special
-                moments. From video production to event planning, we bring your
-                ideas to life professionally and effortlessly.
+                grow your brand, tell your story, and celebrate life&apos;s
+                special moments. From video production to event planning, we
+                bring your ideas to life professionally and effortlessly.
               </p>
               <Link href="/services" className="primary-btn">
                 View all services

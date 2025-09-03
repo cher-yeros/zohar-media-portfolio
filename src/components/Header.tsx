@@ -1,46 +1,74 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   // Helper function to check if a path is active
   const isActivePath = (path: string) => {
+    if (!pathname) return false;
     if (path === "/" && pathname === "/") return true;
     if (path !== "/" && pathname.startsWith(path)) return true;
     return false;
   };
 
-  // Handle mobile menu toggle
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  // Close mobile menu when clicking outside
+  // Initialize SlickNav for mobile menu
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (
-        !target.closest(".header__nav__menu") &&
-        !target.closest(".mobile-menu-toggle")
-      ) {
-        setIsMobileMenuOpen(false);
+    const initSlickNav = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      if (typeof window !== "undefined" && (window as any).jQuery) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const $ = (window as any).jQuery as any;
+        if ($.fn.slicknav) {
+          // Only initialize SlickNav on mobile/tablet screens
+          if (window.innerWidth <= 991) {
+            $(".header__nav__menu").slicknav({
+              label: "MENU",
+              prependTo: ".header .container",
+              allowParentLinks: true,
+              closeOnClick: true,
+              duplicate: false,
+              brand: "",
+            });
+          }
+        }
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+    // Initialize SlickNav after a short delay to ensure jQuery is loaded
+    const timer = setTimeout(initSlickNav, 100);
 
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+    // Also handle window resize
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        // Destroy SlickNav on desktop
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if ((window as any).jQuery && (window as any).jQuery.fn.slicknav) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const $ = (window as any).jQuery as any;
+          $(".header__nav__menu").slicknav("destroy");
+        }
+        // Show the original navigation
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const $ = (window as any).jQuery as any;
+        $(".header__nav__menu").show();
+      } else {
+        // Initialize SlickNav on mobile
+        initSlickNav();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -61,85 +89,75 @@ const Header: React.FC = () => {
           </div>
           <div className="col-lg-10">
             <div className="header__nav__option">
-              <nav
-                className={`header__nav__menu mobile-menu ${
-                  isMobileMenuOpen ? "active" : ""
-                }`}
-              >
+              <nav className="header__nav__menu">
                 <ul>
                   <li className={isActivePath("/") ? "active" : ""}>
-                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                      Home
-                    </Link>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className={isActivePath("/about") ? "active" : ""}>
-                    <Link
-                      href="/about"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      About
-                    </Link>
+                    <Link href="/about">About</Link>
                   </li>
                   <li className={isActivePath("/portfolio") ? "active" : ""}>
-                    <Link
-                      href="/portfolio"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Portfolio
-                    </Link>
+                    <Link href="/portfolio">Portfolio</Link>
                   </li>
                   <li className={isActivePath("/services") ? "active" : ""}>
-                    <Link
-                      href="/services"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Services
-                    </Link>
+                    <Link href="/services">Services</Link>
                   </li>
                   {/* <li className={isActivePath("/blog") ? "active" : ""}>
-                    <Link
-                      href="/blog"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
+                    <Link href="/blog">
                       Blog
                     </Link>
                   </li> */}
                   <li className={isActivePath("/contact") ? "active" : ""}>
-                    <Link
-                      href="/contact"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Contact
-                    </Link>
+                    <Link href="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>
               <div className="header__nav__social">
-                <a href="#" aria-label="Facebook">
+                <a
+                  href="https://facebook.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
                   <i className="fa fa-facebook"></i>
                 </a>
-                <a href="#" aria-label="Twitter">
+                <a
+                  href="https://twitter.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
                   <i className="fa fa-twitter"></i>
                 </a>
-                <a href="#" aria-label="Dribbble">
-                  <i className="fa fa-dribbble"></i>
+                <a
+                  href="https://linkedin.com/company/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <i className="fa fa-linkedin"></i>
                 </a>
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://instagram.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <i className="fa fa-instagram"></i>
                 </a>
-                <a href="#" aria-label="YouTube">
+                <a
+                  href="https://youtube.com/@zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <i className="fa fa-youtube-play"></i>
                 </a>
-              </div>
-              <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                <span></span>
-                <span></span>
-                <span></span>
               </div>
             </div>
           </div>
         </div>
-        <div id="mobile-menu-wrap"></div>
       </div>
     </header>
   );

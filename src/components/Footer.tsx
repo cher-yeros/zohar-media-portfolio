@@ -37,19 +37,44 @@ const Footer: React.FC = () => {
             </div>
             <div className="col-lg-6 col-md-6">
               <div className="footer__top__social">
-                <a href="#" aria-label="Facebook">
+                <a
+                  href="https://facebook.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
                   <i className="fa fa-facebook"></i>
                 </a>
-                <a href="#" aria-label="Twitter">
+                <a
+                  href="https://twitter.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
                   <i className="fa fa-twitter"></i>
                 </a>
-                <a href="#" aria-label="Dribbble">
-                  <i className="fa fa-dribbble"></i>
+                <a
+                  href="https://linkedin.com/company/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <i className="fa fa-linkedin"></i>
                 </a>
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://instagram.com/zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <i className="fa fa-instagram"></i>
                 </a>
-                <a href="#" aria-label="YouTube">
+                <a
+                  href="https://youtube.com/@zoharmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <i className="fa fa-youtube-play"></i>
                 </a>
               </div>
@@ -63,9 +88,9 @@ const Footer: React.FC = () => {
                 <h5>About us</h5>
                 <p>
                   Zohar Media is a creative company dedicated to helping you
-                  grow your brand, tell your story, and celebrate life's special
-                  moments with deep understanding of Ethiopian style, culture,
-                  and audience.
+                  grow your brand, tell your story, and celebrate life&apos;s
+                  special moments with deep understanding of Ethiopian style,
+                  culture, and audience.
                 </p>
                 <Link href="/about" className="read__more">
                   Read more <span className="arrow_right"></span>

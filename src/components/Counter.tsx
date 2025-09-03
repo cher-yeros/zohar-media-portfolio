@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import CountUp from "react-countup";
+// CountUp removed - using simple number display instead
 
 interface CounterItem {
   id: number;
@@ -44,7 +44,7 @@ const counters: CounterItem[] = [
 
 const Counter: FC = () => {
   return (
-    <section className="counter " data-aos="fade-up">
+    <section className="counter ">
       <div className="container">
         <div className="counter__content">
           <div className="row">
@@ -67,7 +67,7 @@ const Counter: FC = () => {
                       className="mx-auto mb-3"
                     />
                     <h2 className="counter_num" data-aos="fade-up">
-                      <CountUp end={item.number} duration={3} />
+                      {item.number.toLocaleString()}
                     </h2>
                     <p data-aos="fade-up">{item.label}</p>
                   </div>

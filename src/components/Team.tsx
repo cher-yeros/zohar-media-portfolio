@@ -19,10 +19,26 @@ const teamMembers: TeamMember[] = [
     role: "Creative Director",
     image: "/img/team/team-1.jpg",
     socials: [
-      { platform: "facebook", url: "#", icon: "fa fa-facebook" },
-      { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "linkedin", url: "#", icon: "fa fa-linkedin" },
-      { platform: "instagram", url: "#", icon: "fa fa-instagram" },
+      {
+        platform: "facebook",
+        url: "https://facebook.com/zoharmedia",
+        icon: "fa fa-facebook",
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/zoharmedia",
+        icon: "fa fa-twitter",
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/company/zoharmedia",
+        icon: "fa fa-linkedin",
+      },
+      {
+        platform: "instagram",
+        url: "https://instagram.com/zoharmedia",
+        icon: "fa fa-instagram",
+      },
     ],
   },
   {
@@ -32,10 +48,26 @@ const teamMembers: TeamMember[] = [
     image: "/img/team/team-2.jpg",
     extraClass: "team__item--second",
     socials: [
-      { platform: "facebook", url: "#", icon: "fa fa-facebook" },
-      { platform: "youtube", url: "#", icon: "fa fa-youtube-play" },
-      { platform: "vimeo", url: "#", icon: "fa fa-vimeo" },
-      { platform: "instagram", url: "#", icon: "fa fa-instagram" },
+      {
+        platform: "facebook",
+        url: "https://facebook.com/zoharmedia",
+        icon: "fa fa-facebook",
+      },
+      {
+        platform: "youtube",
+        url: "https://youtube.com/@zoharmedia",
+        icon: "fa fa-youtube-play",
+      },
+      {
+        platform: "vimeo",
+        url: "https://vimeo.com/zoharmedia",
+        icon: "fa fa-vimeo",
+      },
+      {
+        platform: "instagram",
+        url: "https://instagram.com/zoharmedia",
+        icon: "fa fa-instagram",
+      },
     ],
   },
   {
@@ -58,10 +90,26 @@ const teamMembers: TeamMember[] = [
     image: "/img/team/team-4.jpg",
     extraClass: "team__item--four",
     socials: [
-      { platform: "facebook", url: "#", icon: "fa fa-facebook" },
-      { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "linkedin", url: "#", icon: "fa fa-linkedin" },
-      { platform: "instagram", url: "#", icon: "fa fa-instagram" },
+      {
+        platform: "facebook",
+        url: "https://facebook.com/zoharmedia",
+        icon: "fa fa-facebook",
+      },
+      {
+        platform: "twitter",
+        url: "https://twitter.com/zoharmedia",
+        icon: "fa fa-twitter",
+      },
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/company/zoharmedia",
+        icon: "fa fa-linkedin",
+      },
+      {
+        platform: "instagram",
+        url: "https://instagram.com/zoharmedia",
+        icon: "fa fa-instagram",
+      },
     ],
   },
 ];

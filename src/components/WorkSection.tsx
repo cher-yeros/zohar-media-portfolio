@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
-import "glightbox/dist/css/glightbox.min.css";
+import React, { useEffect, useRef, useState } from "react";
+import { IsotopeOptions } from "isotope-layout";
+// GLightbox removed - using Magnific Popup instead
 
 interface WorkItem {
   id: number;
@@ -20,7 +20,7 @@ const WorkSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const isotopeRef = useRef<{
     destroy: () => void;
-    arrange: (options: any) => void;
+    arrange: (options: IsotopeOptions) => void;
   } | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -146,47 +146,7 @@ const WorkSection: React.FC = () => {
     }
   }, [activeFilter]);
 
-  useEffect(() => {
-    if (!isClient) return;
-
-    // Dynamically import GLightbox only on client side
-    const initGLightbox = async () => {
-      try {
-        const GLightbox = (await import("glightbox")).default;
-
-        // Initialize GLightbox for video popups
-        const lightbox = GLightbox({
-          selector: ".video-popup",
-          touchNavigation: true,
-          loop: true,
-          autoplayVideos: true,
-          plyr: {
-            css: "https://cdn.plyr.io/3.6.8/plyr.css",
-            js: "https://cdn.plyr.io/3.6.8/plyr.js",
-            config: {
-              ratio: "16:9",
-              muted: false,
-              hideControls: true,
-              youtube: {
-                noCookie: true,
-                rel: 0,
-                showinfo: 0,
-                iv_load_policy: 3,
-              },
-            },
-          },
-        });
-
-        return () => {
-          lightbox.destroy();
-        };
-      } catch (error) {
-        console.error("Failed to load GLightbox:", error);
-      }
-    };
-
-    initGLightbox();
-  }, [isClient]);
+  // GLightbox removed - using Magnific Popup instead
 
   const handleFilterClick = (filterKey: string) => {
     setActiveFilter(filterKey);
@@ -203,7 +163,7 @@ const WorkSection: React.FC = () => {
           <div className="col-lg-12">
             <div className="section-title center-title">
               <span>Our Portfolio</span>
-              <h2>Stories We've Told</h2>
+              <h2>Stories We&apos;ve Told</h2>
             </div>
           </div>
         </div>

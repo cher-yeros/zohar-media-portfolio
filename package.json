@@ -9,22 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.33",
     "aos": "^2.3.4",
-    "bootstrap": "^4.6.2",
     "framer-motion": "^12.23.12",
-    "glightbox": "^3.3.1",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.6.0",
-    "mixitup": "^3.3.2",
     "next": "15.5.0",
-    "popper.js": "^1.16.1",
     "react": "19.1.0",
-    "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
-    "react-modal-video": "^2.0.2",
-    "swiper": "^11.2.10",
-    "yet-another-react-lightbox": "^3.25.0"
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
