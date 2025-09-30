@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 
 import Script from "next/script";
 import { Play, Josefin_Sans } from "next/font/google";
+import LoadingBar from "../components/LoadingBar";
 
 export const metadata: Metadata = {
   title: "Zohar Media Portfolio",
@@ -75,6 +76,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body className={`${play.className} ${josefinSans.className}`}>
+        <LoadingBar color="#007bff" height={3} showSpinner={false} />
         {children}
       </body>
 
@@ -94,7 +96,7 @@ export default function RootLayout({
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></Script>
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></Script>
       <Script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></Script>
-      <Script id="aos-init">
+      {/* <Script id="aos-init">
         {`
           AOS.init({
             duration: 800,
@@ -103,7 +105,7 @@ export default function RootLayout({
             mirror: false
           });
         `}
-      </Script>
+      </Script> */}
     </html>
   );
 }

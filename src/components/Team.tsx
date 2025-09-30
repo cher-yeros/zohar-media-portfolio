@@ -2,6 +2,10 @@
 
 import { FC } from "react";
 import Link from "next/link";
+import {
+  SOCIAL_MEDIA_LINKS,
+  ADDITIONAL_SOCIAL_LINKS,
+} from "../constants/socialMedia";
 
 interface TeamMember {
   id: number;
@@ -9,7 +13,7 @@ interface TeamMember {
   role: string;
   image: string;
   extraClass?: string;
-  socials: { platform: string; url: string; icon: string }[];
+  socials: { platform: string; url: string; icon: string; ariaLabel: string }[];
 }
 
 const teamMembers: TeamMember[] = [
@@ -18,28 +22,9 @@ const teamMembers: TeamMember[] = [
     name: "Zara Yohannes",
     role: "Creative Director",
     image: "/img/team/team-1.jpg",
-    socials: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/zoharmedia",
-        icon: "fa fa-facebook",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/zoharmedia",
-        icon: "fa fa-twitter",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/company/zoharmedia",
-        icon: "fa fa-linkedin",
-      },
-      {
-        platform: "instagram",
-        url: "https://instagram.com/zoharmedia",
-        icon: "fa fa-instagram",
-      },
-    ],
+    socials: SOCIAL_MEDIA_LINKS.filter((social) =>
+      ["facebook", "twitter", "linkedin", "instagram"].includes(social.platform)
+    ),
   },
   {
     id: 2,
@@ -48,26 +33,12 @@ const teamMembers: TeamMember[] = [
     image: "/img/team/team-2.jpg",
     extraClass: "team__item--second",
     socials: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/zoharmedia",
-        icon: "fa fa-facebook",
-      },
-      {
-        platform: "youtube",
-        url: "https://youtube.com/@zoharmedia",
-        icon: "fa fa-youtube-play",
-      },
-      {
-        platform: "vimeo",
-        url: "https://vimeo.com/zoharmedia",
-        icon: "fa fa-vimeo",
-      },
-      {
-        platform: "instagram",
-        url: "https://instagram.com/zoharmedia",
-        icon: "fa fa-instagram",
-      },
+      ...SOCIAL_MEDIA_LINKS.filter((social) =>
+        ["facebook", "youtube", "instagram"].includes(social.platform)
+      ),
+      ...ADDITIONAL_SOCIAL_LINKS.filter(
+        (social) => social.platform === "vimeo"
+      ),
     ],
   },
   {
@@ -77,10 +48,30 @@ const teamMembers: TeamMember[] = [
     image: "/img/team/team-3.jpg",
     extraClass: "team__item--third",
     socials: [
-      { platform: "facebook", url: "#", icon: "fa fa-facebook" },
-      { platform: "twitter", url: "#", icon: "fa fa-twitter" },
-      { platform: "pinterest", url: "#", icon: "fa fa-pinterest" },
-      { platform: "instagram", url: "#", icon: "fa fa-instagram" },
+      {
+        platform: "facebook",
+        url: "#",
+        icon: "fa fa-facebook",
+        ariaLabel: "Facebook",
+      },
+      {
+        platform: "twitter",
+        url: "#",
+        icon: "fa fa-twitter",
+        ariaLabel: "Twitter",
+      },
+      {
+        platform: "pinterest",
+        url: "#",
+        icon: "fa fa-pinterest",
+        ariaLabel: "Pinterest",
+      },
+      {
+        platform: "instagram",
+        url: "#",
+        icon: "fa fa-instagram",
+        ariaLabel: "Instagram",
+      },
     ],
   },
   {
@@ -89,28 +80,9 @@ const teamMembers: TeamMember[] = [
     role: "Social Media Manager",
     image: "/img/team/team-4.jpg",
     extraClass: "team__item--four",
-    socials: [
-      {
-        platform: "facebook",
-        url: "https://facebook.com/zoharmedia",
-        icon: "fa fa-facebook",
-      },
-      {
-        platform: "twitter",
-        url: "https://twitter.com/zoharmedia",
-        icon: "fa fa-twitter",
-      },
-      {
-        platform: "linkedin",
-        url: "https://linkedin.com/company/zoharmedia",
-        icon: "fa fa-linkedin",
-      },
-      {
-        platform: "instagram",
-        url: "https://instagram.com/zoharmedia",
-        icon: "fa fa-instagram",
-      },
-    ],
+    socials: SOCIAL_MEDIA_LINKS.filter((social) =>
+      ["facebook", "twitter", "linkedin", "instagram"].includes(social.platform)
+    ),
   },
 ];
 

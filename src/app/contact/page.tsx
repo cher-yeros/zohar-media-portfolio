@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 
 import Link from "next/link";
 import "../../styles/contact.css";
+import { SOCIAL_MEDIA_LINKS } from "../../constants/socialMedia";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -239,42 +240,18 @@ export default function Contact() {
                 >
                   <h5>Follow Us</h5>
                   <div className="contact__social__links">
-                    <a
-                      href="https://facebook.com/zoharmedia"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social__link facebook"
-                      aria-label="Facebook"
-                    >
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                    <a
-                      href="https://instagram.com/zoharmedia"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social__link instagram"
-                      aria-label="Instagram"
-                    >
-                      <i className="fa fa-instagram"></i>
-                    </a>
-                    <a
-                      href="https://youtube.com/@zoharmedia"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social__link youtube"
-                      aria-label="YouTube"
-                    >
-                      <i className="fa fa-youtube-play"></i>
-                    </a>
-                    <a
-                      href="https://twitter.com/zoharmedia"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social__link twitter"
-                      aria-label="Twitter"
-                    >
-                      <i className="fa fa-twitter"></i>
-                    </a>
+                    {SOCIAL_MEDIA_LINKS.map((social) => (
+                      <a
+                        key={social.platform}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`social__link ${social.platform}`}
+                        aria-label={social.ariaLabel}
+                      >
+                        <i className={social.icon}></i>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>

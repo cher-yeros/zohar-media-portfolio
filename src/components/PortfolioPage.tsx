@@ -1,24 +1,50 @@
 "use client";
+import Aos from "aos";
 import { IsotopeOptions } from "isotope-layout";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 export default function PortfolioPage() {
   const [isClient, setIsClient] = useState(false);
   const [filterKey, setFilterKey] = useState("*");
+  const [selectedVideo, setSelectedVideo] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
   const isotope = useRef<{
     destroy: () => void;
     arrange: (options: IsotopeOptions) => void;
   } | null>(null);
 
+  // Function to extract YouTube video ID and generate thumbnail URL
+  const getYouTubeThumbnail = (url: string) => {
+    let videoId = "";
+
+    // Handle different YouTube URL formats
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1].split("?")[0];
+    } else if (url.includes("youtube.com/watch?v=")) {
+      videoId = url.split("v=")[1].split("&")[0];
+    } else if (url.includes("youtube.com/shorts/")) {
+      videoId = url.split("shorts/")[1].split("?")[0];
+    }
+
+    console.log(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+
+    // Return high quality thumbnail URL
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  };
+
   useEffect(() => {
     setIsClient(true);
-    // Aos.init({
-    //   duration: 600,
-    //   easing: "ease-in-out",
-    //   once: true,
-    //   mirror: false,
-    // });
+    Aos.init({
+      duration: 600,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
   }, []);
 
   useEffect(() => {
@@ -53,79 +79,204 @@ export default function PortfolioPage() {
 
   const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
 
+  const handlePlayButtonClick =
+    (videoUrl: string, title: string) => (e: React.MouseEvent) => {
+      e.preventDefault();
+      setSelectedVideo({ url: videoUrl, title });
+    };
+
   const dataFilters = [
-    { category: "branding", label: "Branding" },
-    { category: "digital-marketing", label: "Digital Marketing" },
-    { category: "web", label: "Web" },
-    { category: "photography", label: "Photography" },
-    { category: "ecommerce", label: "eCommerce" },
+    { category: "video-media-production", label: "Video & Media Production" },
+    { category: "social-media-management", label: "Social Media Management" },
+    {
+      category: "event-planning-production",
+      label: "Event Planning & Production",
+    },
+    { category: "professional-editing", label: "Professional Editing" },
   ];
 
   const items = [
+    // Video & Media Production
     {
       id: 1,
-      category: "branding",
-      img: "/img/portfolio/portfolio-1.jpg",
-      title: "VIP Auto Tires & Service",
-      tags: ["eCommerce", "Magento"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail(
+        "https://youtu.be/2S3yWP1PKg8?si=kq9hSb-10YcoGJhX"
+      ),
+      title: "Rise Of Fearless Game Launching Event",
+      tags: ["Event Coverage", "Game Launch"],
+      videoUrl: "https://youtu.be/2S3yWP1PKg8?si=kq9hSb-10YcoGJhX",
     },
     {
       id: 2,
-      category: "digital-marketing",
-      img: "/img/portfolio/portfolio-2.jpg",
-      title: "Digital Campaign",
-      tags: ["Photography"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail("https://www.youtube.com/watch?v=2S3yWP1PKg8"),
+      title: "Adwa Game Launching Event",
+      tags: ["Event Coverage", "Game Launch"],
+      videoUrl: "https://www.youtube.com/watch?v=2S3yWP1PKg8",
     },
     {
       id: 3,
-      category: "web",
-      img: "/img/portfolio/portfolio-3.jpg",
-      title: "Web Project",
-      tags: ["eCommerce", "Magento"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail(
+        "https://youtu.be/eLHHWSR-eLs?si=shUCVEowoL28C0MC"
+      ),
+      title: "Business in Africa Reality Show",
+      tags: ["Reality Show", "Business"],
+      videoUrl: "https://youtu.be/eLHHWSR-eLs?si=shUCVEowoL28C0MC",
     },
     {
       id: 4,
-      category: "photography",
-      img: "/img/portfolio/portfolio-4.jpg",
-      title: "Photography Collection",
-      tags: ["Portrait", "Landscape"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail("https://youtu.be/npRPBxRrH-U"),
+      title: "Inside Adwa Museum Tour",
+      tags: ["Documentary", "Museum Tour"],
+      videoUrl: "https://youtu.be/npRPBxRrH-U",
     },
     {
       id: 5,
-      category: "ecommerce",
-      img: "/img/portfolio/portfolio-5.jpg",
-      title: "E-commerce Platform",
-      tags: ["React", "Node.js"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail("https://youtu.be/BY3rWSVROiA"),
+      title: "Home Tour For Maya Residence",
+      tags: ["Real Estate", "Property Tour"],
+      videoUrl: "https://youtu.be/BY3rWSVROiA",
     },
     {
       id: 6,
-      category: "branding",
-      img: "/img/portfolio/portfolio-6.jpg",
-      title: "Brand Identity Design",
-      tags: ["Logo", "Branding"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail(
+        "https://youtu.be/N7zMOdbVKKY?si=iUd6Q_b714yGR12k"
+      ),
+      title: "Maya Residence - Additional Tour",
+      tags: ["Real Estate", "Property Tour"],
+      videoUrl: "https://youtu.be/N7zMOdbVKKY?si=iUd6Q_b714yGR12k",
     },
     {
       id: 7,
-      category: "web",
-      img: "/img/portfolio/portfolio-7.jpg",
-      title: "Corporate Website",
-      tags: ["WordPress", "SEO"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail(
+        "https://youtu.be/W9WYOi9cz-I?si=xKNuwUD8DWcCGtGe"
+      ),
+      title: "Fitness Videos For Reuben Geimah",
+      tags: ["Fitness", "Personal Training"],
+      videoUrl: "https://youtu.be/W9WYOi9cz-I?si=xKNuwUD8DWcCGtGe",
     },
     {
       id: 8,
-      category: "digital-marketing",
-      img: "/img/portfolio/portfolio-8.jpg",
-      title: "Social Media Campaign",
-      tags: ["Instagram", "Facebook"],
+      category: "video-media-production",
+      img: getYouTubeThumbnail(
+        "https://youtu.be/Qi3-BnQAUs8?si=LakYpdsuZ0VElSzw"
+      ),
+      title: "Fitness Videos For Reuben Geimah - Part 2",
+      tags: ["Fitness", "Personal Training"],
+      videoUrl: "https://youtu.be/Qi3-BnQAUs8?si=LakYpdsuZ0VElSzw",
     },
+
+    // Event Planning & Production
     {
       id: 9,
-      category: "photography",
-      img: "/img/portfolio/portfolio-9.jpg",
-      title: "Product Photography",
-      tags: ["Commercial", "Studio"],
+      category: "event-planning-production",
+      img: getYouTubeThumbnail("https://youtu.be/jMpOk3DaQqY"),
+      title: "Puagmae Fest Event Recap",
+      tags: ["Event Recap", "Festival"],
+      videoUrl: "https://youtu.be/jMpOk3DaQqY",
+    },
+    {
+      id: 10,
+      category: "event-planning-production",
+      img: getYouTubeThumbnail("https://youtu.be/sDDGmJ3XAqo"),
+      title: "Menkem Transport Event Recap",
+      tags: ["Event Recap", "Transport"],
+      videoUrl: "https://youtu.be/sDDGmJ3XAqo",
+    },
+
+    // Professional Editing
+    {
+      id: 11,
+      category: "professional-editing",
+      img: getYouTubeThumbnail(
+        "https://youtube.com/shorts/3xjub12INiQ?si=d1BAmU9UsIlY-XRh"
+      ),
+      title: "Gadzhi Style Editing for Act Da Verse",
+      tags: ["Music Video", "Creative Editing"],
+      videoUrl: "https://youtube.com/shorts/3xjub12INiQ?si=d1BAmU9UsIlY-XRh",
+    },
+    {
+      id: 12,
+      category: "professional-editing",
+      img: getYouTubeThumbnail(
+        "https://youtube.com/shorts/yTps291c3xg?si=WC-hTWfv7KvigtQ-"
+      ),
+      title: "Gadzhi Style Editing - Short 2",
+      tags: ["Music Video", "Creative Editing"],
+      videoUrl: "https://youtube.com/shorts/yTps291c3xg?si=WC-hTWfv7KvigtQ-",
+    },
+    {
+      id: 13,
+      category: "professional-editing",
+      img: getYouTubeThumbnail(
+        "https://youtube.com/shorts/WeU3h0k-Od8?si=c3ln7BCXvBjfd-Qx"
+      ),
+      title: "Gadzhi Style Editing - Short 3",
+      tags: ["Music Video", "Creative Editing"],
+      videoUrl: "https://youtube.com/shorts/WeU3h0k-Od8?si=c3ln7BCXvBjfd-Qx",
+    },
+    {
+      id: 14,
+      category: "professional-editing",
+      img: getYouTubeThumbnail("https://youtu.be/11Ti4rJ9AE8"),
+      title: "Faceless Video Edit - Collection 1",
+      tags: ["Creative Editing", "Faceless Content"],
+      videoUrl: "https://youtu.be/11Ti4rJ9AE8",
+    },
+    {
+      id: 15,
+      category: "professional-editing",
+      img: getYouTubeThumbnail("https://youtu.be/1LMGU1gIo-0"),
+      title: "Faceless Video Edit - Collection 2",
+      tags: ["Creative Editing", "Faceless Content"],
+      videoUrl: "https://youtu.be/1LMGU1gIo-0",
+    },
+    {
+      id: 16,
+      category: "professional-editing",
+      img: getYouTubeThumbnail("https://youtu.be/l2MyOX_qkdY"),
+      title: "Faceless Video Edit - Collection 3",
+      tags: ["Creative Editing", "Faceless Content"],
+      videoUrl: "https://youtu.be/l2MyOX_qkdY",
+    },
+    {
+      id: 17,
+      category: "professional-editing",
+      img: getYouTubeThumbnail("https://youtu.be/z0j7T87VYwU"),
+      title: "Faceless Video Edit - Collection 4",
+      tags: ["Creative Editing", "Faceless Content"],
+      videoUrl: "https://youtu.be/z0j7T87VYwU",
+    },
+    {
+      id: 18,
+      category: "professional-editing",
+      img: getYouTubeThumbnail("https://youtu.be/43i8FQKJVp0"),
+      title: "Faceless Video Edit - Collection 5",
+      tags: ["Creative Editing", "Faceless Content"],
+      videoUrl: "https://youtu.be/43i8FQKJVp0",
     },
   ];
+
+  // Function to convert YouTube URL to embed URL
+  const getYouTubeEmbedUrl = (url: string) => {
+    let videoId = "";
+
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1].split("?")[0];
+    } else if (url.includes("youtube.com/watch?v=")) {
+      videoId = url.split("v=")[1].split("&")[0];
+    } else if (url.includes("youtube.com/shorts/")) {
+      videoId = url.split("shorts/")[1].split("?")[0];
+    }
+
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
 
   if (!isClient) {
     return null;
@@ -142,53 +293,69 @@ export default function PortfolioPage() {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <button
-                className={`filter-btn ${filterKey === "*" ? "active" : ""}`}
-                onClick={handleFilterKeyChange("*")}
+              <ul
+                className="portfolio__filter"
                 style={{
-                  padding: "8px 16px",
-                  fontSize: "14px",
-                  margin: "0 5px",
-                  borderRadius: "20px",
-                  border: "1px solid #ddd",
-                  background: filterKey === "*" ? "#00bfe7" : "transparent",
-                  color: filterKey === "*" ? "white" : "#333",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
                 }}
               >
-                All
-              </button>
-              {dataFilters.map((filter) => (
-                <button
-                  key={filter.label}
-                  className={`filter-btn ${
-                    filterKey === filter.category ? "active" : ""
+                <li
+                  className={`${
+                    filterKey === "*" ? "active mixitup-control-active" : ""
                   }`}
-                  onClick={handleFilterKeyChange(filter.category)}
+                  data-filter="*"
+                  onClick={handleFilterKeyChange("*")}
                   style={{
-                    padding: "8px 16px",
-                    fontSize: "14px",
-                    margin: "0 5px",
-                    borderRadius: "20px",
-                    border: "1px solid #ddd",
-                    background:
-                      filterKey === filter.category ? "#00bfe7" : "transparent",
-                    color: filterKey === filter.category ? "white" : "#333",
+                    display: "inline-block",
+                    fontSize: "16px",
+                    color: "#adadad",
+                    marginRight: "5px",
                     cursor: "pointer",
-                    transition: "all 0.3s ease",
+                    padding: "6px 22px",
+                    border:
+                      filterKey === "*"
+                        ? "1px solid #00bfe7"
+                        : "1px solid transparent",
                   }}
                 >
-                  {filter.label}
-                </button>
-              ))}
+                  All
+                </li>
+                {dataFilters.map((filter) => (
+                  <li
+                    key={filter.label}
+                    className={`${
+                      filterKey === filter.category
+                        ? "active mixitup-control-active"
+                        : ""
+                    }`}
+                    data-filter={`.${filter.category}`}
+                    onClick={handleFilterKeyChange(filter.category)}
+                    style={{
+                      display: "inline-block",
+                      fontSize: "16px",
+                      color: "#adadad",
+                      marginRight: "5px",
+                      cursor: "pointer",
+                      padding: "6px 22px",
+                      border:
+                        filterKey === filter.category
+                          ? "1px solid #00bfe7"
+                          : "1px solid transparent",
+                    }}
+                  >
+                    {filter.label}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
 
         {/* Gallery */}
         <div className="row filter-container">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className={`col-lg-4 col-md-6 col-sm-6 filter-item ${item.category}`}
@@ -196,7 +363,13 @@ export default function PortfolioPage() {
               // data-aos-delay={200 + index * 100}
             >
               <div className="portfolio__item">
-                <div className="portfolio__item__video">
+                <div
+                  className="portfolio__item__video"
+                  style={{
+                    position: "relative",
+                    cursor: "pointer",
+                  }}
+                >
                   <Image
                     src={item.img}
                     alt={item.title}
@@ -204,19 +377,20 @@ export default function PortfolioPage() {
                     height={300}
                     className="w-full h-auto rounded-lg"
                   />
-                  <div className="portfolio__item__hover">
-                    <div className="portfolio__item__hover__text">
-                      <h4>{item.title}</h4>
-                      <ul>
-                        {item.tags.map((tag, i) => (
-                          <li key={i}>{tag}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="portfolio__item__view">
-                      <i className="fa fa-eye"></i>
-                    </div>
-                  </div>
+                  {item.videoUrl ? (
+                    <button
+                      onClick={handlePlayButtonClick(item.videoUrl, item.title)}
+                      className="play-btn video-popup"
+                      style={{
+                        background: "none",
+                        // border: "none",
+                        cursor: "pointer",
+                        padding: 0,
+                      }}
+                    >
+                      <i className="fa fa-play"></i>
+                    </button>
+                  ) : null}
                 </div>
                 <div className="portfolio__item__text">
                   <h4>{item.title}</h4>
@@ -231,6 +405,83 @@ export default function PortfolioPage() {
           ))}
         </div>
       </div>
+
+      {/* Video Popup Modal */}
+      <Popup
+        open={!!selectedVideo}
+        closeOnDocumentClick
+        onClose={() => setSelectedVideo(null)}
+        modal
+        contentStyle={{
+          background: "transparent",
+          border: "none",
+          padding: 0,
+          width: "auto",
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+        }}
+        overlayStyle={{
+          background: "rgba(0, 0, 0, 0.8)",
+        }}
+      >
+        {selectedVideo && (
+          <div style={{ position: "relative" }}>
+            <button
+              onClick={() => setSelectedVideo(null)}
+              style={{
+                position: "absolute",
+                top: "-50px",
+                right: "-10px",
+                background: "rgba(0, 0, 0, 0.8)",
+                border: "2px solid rgba(255, 255, 255, 0.3)",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "20px",
+                fontWeight: "bold",
+                color: "#ffffff",
+                zIndex: 1000,
+                transition: "all 0.3s ease",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.9)";
+                e.currentTarget.style.color = "#000000";
+                e.currentTarget.style.border = "2px solid rgba(0, 0, 0, 0.3)";
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(0, 0, 0, 0.8)";
+                e.currentTarget.style.color = "#ffffff";
+                e.currentTarget.style.border =
+                  "2px solid rgba(255, 255, 255, 0.3)";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              ×
+            </button>
+            <iframe
+              width="800"
+              height="450"
+              src={getYouTubeEmbedUrl(selectedVideo.url)}
+              title={selectedVideo.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                border: "none",
+                borderRadius: "8px",
+                maxWidth: "100%",
+                maxHeight: "100%",
+              }}
+            />
+          </div>
+        )}
+      </Popup>
     </section>
   );
 }

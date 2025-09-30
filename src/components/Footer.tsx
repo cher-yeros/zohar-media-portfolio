@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SOCIAL_MEDIA_LINKS } from "../constants/socialMedia";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -37,46 +38,17 @@ const Footer: React.FC = () => {
             </div>
             <div className="col-lg-6 col-md-6">
               <div className="footer__top__social">
-                <a
-                  href="https://facebook.com/zoharmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                >
-                  <i className="fa fa-facebook"></i>
-                </a>
-                <a
-                  href="https://twitter.com/zoharmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter"
-                >
-                  <i className="fa fa-twitter"></i>
-                </a>
-                <a
-                  href="https://linkedin.com/company/zoharmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <i className="fa fa-linkedin"></i>
-                </a>
-                <a
-                  href="https://instagram.com/zoharmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <i className="fa fa-instagram"></i>
-                </a>
-                <a
-                  href="https://youtube.com/@zoharmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                >
-                  <i className="fa fa-youtube-play"></i>
-                </a>
+                {SOCIAL_MEDIA_LINKS.map((social) => (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.ariaLabel}
+                  >
+                    <i className={social.icon}></i>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
