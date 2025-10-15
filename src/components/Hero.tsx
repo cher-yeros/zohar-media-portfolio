@@ -79,14 +79,15 @@ const Hero: React.FC = () => {
                       >
                         {slide.subtitle}
                       </span>
-                      <h2
+                      <h1
                         className="hero__title"
+                        style={{ fontWeight: "bold" }}
                         data-aos="fade-up"
                         data-aos-duration="600"
                         data-aos-delay="400"
                       >
                         {slide.title}
-                      </h2>
+                      </h1>
                       <div
                         data-aos="fade-up"
                         data-aos-duration="600"

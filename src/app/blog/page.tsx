@@ -1,5 +1,40 @@
 import Link from "next/link";
 import Layout from "../../components/Layout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read the latest insights, tips, and trends in video production, web design, and content marketing from Zohar Media's expert team.",
+  keywords: [
+    "video production blog",
+    "web design tips",
+    "content marketing",
+    "Atlanta videography news",
+    "media production insights",
+    "creative industry trends",
+  ],
+  openGraph: {
+    title: "Blog - Zohar Media",
+    description:
+      "Read the latest insights, tips, and trends in video production, web design, and content marketing from Zohar Media's expert team.",
+    url: "https://zoharmedia.net/blog",
+    images: [
+      {
+        url: "/img/og-blog.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zohar Media Blog",
+      },
+    ],
+  },
+  twitter: {
+    title: "Blog - Zohar Media",
+    description:
+      "Read the latest insights, tips, and trends in video production, web design, and content marketing.",
+    images: ["/img/og-blog.jpg"],
+  },
+};
 
 export default function Blog() {
   const blogPosts = [
@@ -33,7 +68,7 @@ export default function Blog() {
   ];
 
   return (
-    <Layout title="Blog - Zohar Media Portfolio">
+    <Layout>
       {/* Breadcrumb Section */}
       <section
         className="breadcrumb-option spad set-bg"

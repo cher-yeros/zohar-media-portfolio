@@ -44,7 +44,7 @@ const ServicesSection: React.FC = () => {
             >
               <div className="section-title">
                 <span>Our services</span>
-                <h2>What We Do?</h2>
+                <h2>Professional Media Services in Atlanta</h2>
               </div>
               <p>
                 Zohar Media offers comprehensive creative services to help you
@@ -74,7 +74,7 @@ const ServicesSection: React.FC = () => {
                         alt={service.title}
                       />
                     </div>
-                    <h4>{service.title}</h4>
+                    <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
                 </div>

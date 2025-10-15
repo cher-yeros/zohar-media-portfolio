@@ -13,7 +13,7 @@ export interface SocialMediaLink {
 export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
   {
     platform: "facebook",
-    url: "https://facebook.com/zoharmedia",
+    url: "https://www.facebook.com/profile.php?id=61579623959145&mibextid=rS40aB7S9Ucbxw6v",
     icon: "fa fa-facebook",
     ariaLabel: "Facebook",
   },
@@ -25,7 +25,7 @@ export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
   },
   {
     platform: "linkedin",
-    url: "https://linkedin.com/company/zoharmedia",
+    url: "https://www.linkedin.com/company/zohar-media/",
     icon: "fa fa-linkedin",
     ariaLabel: "LinkedIn",
   },
@@ -43,7 +43,7 @@ export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
   },
   {
     platform: "tiktok",
-    url: "https://tiktok.com/@zoharmedia",
+    url: "https://www.tiktok.com/@zoharmedia?_t=ZM-90PIWVegtBr&_r=1",
     icon: "fa fa-tiktok",
     ariaLabel: "TikTok",
   },
@@ -77,13 +77,22 @@ export const getAllSocialMediaLinks = (): SocialMediaLink[] => {
   return [...SOCIAL_MEDIA_LINKS, ...ADDITIONAL_SOCIAL_LINKS];
 };
 
+// Contact information
+export const CONTACT_INFO = {
+  EMAIL: "zoharmedia7@gmail.com",
+  PHONE_PRIMARY: "+251913119638",
+  PHONE_SECONDARY: "+251955318719",
+  ADDRESS: "Addis Ababa, Ethiopia",
+} as const;
+
 // Export individual platform URLs for convenience
 export const SOCIAL_URLS = {
-  FACEBOOK: "https://facebook.com/zoharmedia",
+  FACEBOOK:
+    "https://www.facebook.com/profile.php?id=61579623959145&mibextid=rS40aB7S9Ucbxw6v",
   TWITTER: "https://twitter.com/zoharmedia",
-  LINKEDIN: "https://linkedin.com/company/zoharmedia",
+  LINKEDIN: "https://www.linkedin.com/company/zohar-media/",
   INSTAGRAM: "https://instagram.com/zoharmediaa",
   YOUTUBE: "https://www.youtube.com/@KingBruk",
-  TIKTOK: "https://tiktok.com/@zoharmedia",
+  TIKTOK: "https://www.tiktok.com/@zoharmedia?_t=ZM-90PIWVegtBr&_r=1",
   VIMEO: "https://vimeo.com/zoharmedia",
 } as const;

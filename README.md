@@ -45,6 +45,7 @@ zohar-media-portfolio/
 ## 🛠️ Components
 
 ### Core Components
+
 - **Layout**: Main layout wrapper with header, footer, and meta tags
 - **Header**: Responsive navigation with mobile menu support
 - **Footer**: Site footer with contact info and newsletter signup
@@ -54,6 +55,7 @@ zohar-media-portfolio/
 - **CallToAction**: Call-to-action section for lead generation
 
 ### Pages
+
 - **Home** (`/`): Landing page with hero, about, services, and CTA
 - **About** (`/about`): Company information and team details
 - **Portfolio** (`/portfolio`): Work showcase with filtering
@@ -64,23 +66,27 @@ zohar-media-portfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd zohar-media-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -114,17 +120,20 @@ The project maintains the original Bootstrap 4 styling while adding custom CSS f
 ## 🔧 Customization
 
 ### Adding New Pages
+
 1. Create a new folder in `src/app/`
 2. Add a `page.tsx` file
 3. Use the `Layout` component as a wrapper
 4. Import and use existing components as needed
 
 ### Modifying Components
+
 1. Locate the component in `src/components/`
 2. Make your changes
 3. The component will automatically update across all pages
 
 ### Styling Changes
+
 1. Modify `src/styles/globals.css` for global styles
 2. Update component-specific styles in the component files
 3. Bootstrap classes can be modified in the public CSS files
@@ -161,7 +170,8 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support and questions, please contact:
-- Email: info@zoharmedia.com
+
+- Email: info@zoharmedia.net
 - Phone: +1 (555) 123-4567
 
 ---

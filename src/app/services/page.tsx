@@ -1,19 +1,44 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../../components/Layout";
 import Link from "next/link";
-import Aos from "aos";
+import ServicesClient from "./ServicesClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Comprehensive media services including video production, social media management, event planning, and professional editing. Professional videography services in Atlanta.",
+  keywords: [
+    "video production services",
+    "social media management",
+    "event planning",
+    "professional editing",
+    "Atlanta videography services",
+    "media production company",
+  ],
+  openGraph: {
+    title: "Services - Zohar Media",
+    description:
+      "Comprehensive media services including video production, social media management, event planning, and professional editing.",
+    url: "https://zoharmedia.net/services",
+    images: [
+      {
+        url: "/img/og-services.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zohar Media Services",
+      },
+    ],
+  },
+  twitter: {
+    title: "Services - Zohar Media",
+    description:
+      "Comprehensive media services including video production, social media management, event planning, and professional editing.",
+    images: ["/img/og-services.jpg"],
+  },
+};
 
 export default function Services() {
-  useEffect(() => {
-    Aos.init({
-      duration: 600,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-  }, []);
-
   const services = [
     {
       icon: "si-1.png",
@@ -70,7 +95,8 @@ export default function Services() {
   ];
 
   return (
-    <Layout title="Services - Zohar Media Portfolio">
+    <Layout>
+      <ServicesClient />
       {/* Breadcrumb Section */}
       <section
         className="breadcrumb-option spad set-bg"

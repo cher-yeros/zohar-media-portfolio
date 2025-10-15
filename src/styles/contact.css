@@ -131,6 +131,14 @@
   background: linear-gradient(135deg, #1da1f2, #0d8bd9);
 }
 
+.social__link.linkedin {
+  background: linear-gradient(135deg, #0077b5, #005885);
+}
+
+.social__link.tiktok {
+  background: linear-gradient(135deg, #000000, #333333);
+}
+
 /* Contact Form Enhancements */
 .contact__form__header {
   text-align: center;

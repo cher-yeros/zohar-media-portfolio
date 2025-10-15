@@ -1,88 +1,49 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import PortfolioPage from "@/components/PortfolioPage";
-import Aos from "aos";
+import PortfolioClient from "./PortfolioClient";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Explore Zohar Media's portfolio of professional videography and media projects. View our corporate videos, event coverage, wedding films, and creative content productions.",
+  keywords: [
+    "Zohar Media portfolio",
+    "Atlanta videography portfolio",
+    "professional video examples",
+    "corporate video portfolio",
+    "event videography samples",
+    "wedding video portfolio",
+    "creative content examples",
+  ],
+  openGraph: {
+    title: "Portfolio - Zohar Media",
+    description:
+      "Explore Zohar Media's portfolio of professional videography and media projects. View our corporate videos, event coverage, wedding films, and creative content productions.",
+    url: "https://zoharmedia.net/portfolio",
+    images: [
+      {
+        url: "/img/og-portfolio.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zohar Media Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    title: "Portfolio - Zohar Media",
+    description:
+      "Explore Zohar Media's portfolio of professional videography and media projects.",
+    images: ["/img/og-portfolio.jpg"],
+  },
+};
 
 export default function Portfolio() {
-  useEffect(() => {
-    Aos.init({
-      duration: 600,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-  }, []);
-
-  const portfolioItems = [
-    {
-      id: 1,
-      category: "video",
-      image: "/img/portfolio/portfolio-1.jpg",
-      title: "Corporate Video Production",
-      description: "Professional corporate video for tech company",
-    },
-    {
-      id: 2,
-      category: "web",
-      image: "/img/portfolio/portfolio-2.jpg",
-      title: "E-commerce Website",
-      description: "Modern e-commerce platform design",
-    },
-    {
-      id: 3,
-      category: "video",
-      image: "/img/portfolio/portfolio-3.jpg",
-      title: "Product Launch Video",
-      description: "Creative product launch campaign",
-    },
-    {
-      id: 4,
-      category: "web",
-      image: "/img/portfolio/portfolio-4.jpg",
-      title: "Portfolio Website",
-      description: "Artist portfolio and gallery",
-    },
-    {
-      id: 5,
-      category: "video",
-      image: "/img/portfolio/portfolio-5.jpg",
-      title: "Event Coverage",
-      description: "Live event filming and editing",
-    },
-    {
-      id: 6,
-      category: "web",
-      image: "/img/portfolio/portfolio-6.jpg",
-      title: "Restaurant Website",
-      description: "Modern restaurant website design",
-    },
-    {
-      id: 7,
-      category: "video",
-      image: "/img/portfolio/portfolio-7.jpg",
-      title: "Music Video",
-      description: "Creative music video production",
-    },
-    {
-      id: 8,
-      category: "web",
-      image: "/img/portfolio/portfolio-8.jpg",
-      title: "Blog Platform",
-      description: "Content management system",
-    },
-    {
-      id: 9,
-      category: "video",
-      image: "/img/portfolio/portfolio-9.jpg",
-      title: "Documentary",
-      description: "Short documentary film",
-    },
-  ];
-
   return (
-    <Layout title="Portfolio - Zohar Media Portfolio">
+    <Layout>
+      <PortfolioClient />
       {/* Breadcrumb Section */}
       <section
         className="breadcrumb-option spad set-bg"
