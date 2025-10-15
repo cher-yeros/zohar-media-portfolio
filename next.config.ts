@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['aos', 'framer-motion'],
   },
   async headers() {
