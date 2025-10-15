@@ -115,7 +115,9 @@ const Header: React.FC = () => {
                 </ul>
               </nav>
               <div className="header__nav__social">
-                {SOCIAL_MEDIA_LINKS.map((social) => (
+                {SOCIAL_MEDIA_LINKS.filter(
+                  (social) => social.platform !== "twitter"
+                ).map((social) => (
                   <a
                     key={social.platform}
                     href={social.url}

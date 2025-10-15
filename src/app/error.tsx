@@ -38,7 +38,7 @@ export default function Error({ error, reset }: ErrorProps) {
             Oops! Something went wrong
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            We encountered an unexpected error. Don't worry, our team has been
+            We encountered an unexpected error. Don&apos;t worry, our team has been
             notified.
           </p>
         </div>

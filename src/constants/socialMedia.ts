@@ -44,7 +44,7 @@ export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
   {
     platform: "tiktok",
     url: "https://www.tiktok.com/@zoharmedia?_t=ZM-90PIWVegtBr&_r=1",
-    icon: "fa fa-tiktok",
+    icon: "fa fa-video-camera",
     ariaLabel: "TikTok",
   },
 ];

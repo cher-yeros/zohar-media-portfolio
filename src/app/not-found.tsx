@@ -36,7 +36,7 @@ export default function NotFound() {
             Page Not Found
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Sorry, we couldn't find the page you're looking for. It might have
+            Sorry, we couldn&apos;t find the page you&apos;re looking for. It might have
             been moved, deleted, or you entered the wrong URL.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function NotFound() {
           <div className="space-y-6">
             <div className="text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Let's get you back on track
+                Let&apos;s get you back on track
               </h3>
               <div className="space-y-4">
                 <Link
@@ -108,7 +108,7 @@ export default function NotFound() {
             <div className="border-t border-gray-200 pt-6">
               <div className="text-center">
                 <h4 className="text-sm font-medium text-gray-900 mb-2">
-                  Still can't find what you're looking for?
+                  Still can&apos;t find what you&apos;re looking for?
                 </h4>
                 <p className="text-sm text-gray-600 mb-4">
                   Our team is here to help you find what you need.
