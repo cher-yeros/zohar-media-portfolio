@@ -108,49 +108,7 @@ export default function RootLayout({
           content="Zohar Media Portfolio - Professional videography and media services"
         />
 
-        {/* Preload critical resources */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
-          as="style"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-          as="style"
-        />
-
-        {/* Critical CSS - inline or preload */}
-        <link
-          rel="preload"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          as="style"
-        />
-
-        {/* Non-critical CSS - load asynchronously */}
-        <link
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-          as="style"
-        />
-        <link
-          rel="preload"
-          href="https://cdn.jsdelivr.net/npm/elegant-icons@1.0.1/style.css"
-          as="style"
-        />
-        <link
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-          as="style"
-        />
-        <link
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css"
-          as="style"
-        />
-
-        {/* Critical custom CSS */}
-        <link rel="stylesheet" href="/css/style.css" />
+        {/* External CSS - loaded via Script component for better performance */}
 
         {/* Favicon and App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -175,17 +133,6 @@ export default function RootLayout({
         <StructuredData type="WebSite" data={{}} />
         <StructuredData type="LocalBusiness" data={{}} />
         {children}
-
-        {/* CSS Loading Script */}
-        <Script id="css-loader" strategy="afterInteractive">
-          {`
-            // Load preloaded stylesheets
-            const preloadLinks = document.querySelectorAll('link[rel="preload"][as="style"]');
-            preloadLinks.forEach(link => {
-              link.rel = 'stylesheet';
-            });
-          `}
-        </Script>
       </body>
 
       {/* Critical JavaScript - load early */}
