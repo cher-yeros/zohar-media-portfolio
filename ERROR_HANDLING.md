@@ -137,3 +137,4 @@ The error handling is automatic and requires no additional configuration. Error 
 ## Support
 
 For questions about the error handling implementation, contact the development team or refer to the Next.js documentation on error handling.
+

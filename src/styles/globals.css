@@ -71,13 +71,13 @@
 }
 
 /* Ensure Bootstrap compatibility */
-@import url("/css/bootstrap.min.css");
-@import url("/css/font-awesome.min.css");
-@import url("/css/elegant-icons.css");
-@import url("/css/owl.carousel.min.css");
+@import url("./css/elegant-icons.css");
+@import url("./css/style.css");
 
-@import url("/css/slicknav.min.css");
-@import url("/css/style.css");
+@import url("./css/bootstrap.min.css");
+@import url("./css/font-awesome.min.css");
+/* @import url("./css/owl.carousel.min.css"); */
+@import url("./css/slicknav.min.css");
 
 /* CSS Variables for new Google Fonts */
 :root {

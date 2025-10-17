@@ -109,6 +109,30 @@ export default function RootLayout({
         />
 
         {/* External CSS - loaded via Script component for better performance */}
+        <link
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          rel="stylesheet"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css"
+          rel="stylesheet"
+          integrity="sha512-heyoieAHmpALcBydF1kkxgHlyb1WwYwyrlpgDqPwZeoqwET1Be5jFf7YydZ5UcDun/RnbKgD/xE2DZ6y4c7g=="
+          crossOrigin="anonymous"
+        />
 
         {/* Favicon and App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
