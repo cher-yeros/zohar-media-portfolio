@@ -3,10 +3,10 @@ import "../styles/globals.css";
 
 import "aos/dist/aos.css";
 
+import { Josefin_Sans, Play } from "next/font/google";
 import Script from "next/script";
-import { Play, Josefin_Sans } from "next/font/google";
-import LoadingBar from "../components/LoadingBar";
 import StructuredData from "../components/StructuredData";
+import LoadingBar from "@/components/LoadingBar";
 
 export const metadata: Metadata = {
   title: {
