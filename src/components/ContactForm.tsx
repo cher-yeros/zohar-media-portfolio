@@ -98,18 +98,16 @@ export default function ContactForm() {
   return (
     <div className="col-lg-6 col-md-6">
       <div
-        className="contact__form"
+        className="services__item"
         data-aos="fade-left"
         data-aos-duration="600"
         data-aos-delay="200"
       >
-        <div className="contact__form__header">
-          <h3>Send Us a Message</h3>
-          <p>
-            Tell us about your project and let&apos;s create something amazing
-            together!
-          </p>
-        </div>
+        <h4>Send Us a Message</h4>
+        <p>
+          Tell us about your project and let&apos;s create something amazing
+          together!
+        </p>
 
         {/* Success/Error Messages */}
         {submitStatus === "success" && (

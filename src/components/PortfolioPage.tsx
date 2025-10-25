@@ -2,11 +2,13 @@
 import Aos from "aos";
 import { IsotopeOptions } from "isotope-layout";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 export default function PortfolioPage() {
+  const searchParams = useSearchParams();
   const [isClient, setIsClient] = useState(false);
   const [filterKey, setFilterKey] = useState("*");
   const [selectedVideo, setSelectedVideo] = useState<{
@@ -46,6 +48,14 @@ export default function PortfolioPage() {
       mirror: false,
     });
   }, []);
+
+  // Set initial filter based on URL parameter
+  useEffect(() => {
+    const filterParam = searchParams.get("filter");
+    if (filterParam) {
+      setFilterKey(filterParam);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (!isClient) return;

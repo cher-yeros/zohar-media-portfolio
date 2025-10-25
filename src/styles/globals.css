@@ -135,9 +135,10 @@ h6 {
 
 p {
   font-family: "Josefin Sans", sans-serif !important;
-  color: #adadad;
+  color: #adadad !important;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 26px !important;
+  font-size: 16px !important;
 }
 
 /* Swiper Hero Carousel Custom Styles */
@@ -525,6 +526,23 @@ p {
   overflow: hidden;
 }
 
+.contact .services__item {
+  box-shadow: 0 15px 40px rgba(0, 191, 231, 0.2);
+  transform: scaleX(1);
+}
+
+.contact .services__item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00bfe7, #007bff);
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
 .services__item:before {
   content: "";
   position: absolute;
@@ -574,13 +592,14 @@ p {
 .services__item h4 {
   font-size: 22px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #ffffff;
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
 
 .services__item:hover h4 {
-  color: #00bfe7;
+  /* color: #00bfe7; */
+  color: #ffffff;
 }
 
 .services__item p {

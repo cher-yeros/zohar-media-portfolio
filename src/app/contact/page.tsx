@@ -1,10 +1,9 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import ContactForm from "../../components/ContactForm";
-import Link from "next/link";
-import "../../styles/contact.css";
-import { SOCIAL_MEDIA_LINKS, CONTACT_INFO } from "../../constants/socialMedia";
 import type { Metadata } from "next";
+import Link from "next/link";
+import ContactForm from "../../components/ContactForm";
+import Layout from "../../components/Layout";
+import { CONTACT_INFO, SOCIAL_MEDIA_LINKS } from "../../constants/socialMedia";
+import "../../styles/contact.css";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -45,7 +44,7 @@ export default function Contact() {
     <Layout>
       {/* Breadcrumb Section */}
       <section
-        className="breadcrumb-option spad set-bg"
+        className="breadcrumb-option spad set-bg contact"
         style={{ backgroundImage: "url(/img/breadcrumb-bg.jpg)" }}
         data-aos="fade-in"
         data-aos-duration="800"
@@ -79,112 +78,111 @@ export default function Contact() {
           <div className="row">
             <div className="col-lg-6 col-md-6">
               <div
-                className="contact__widget"
+                className="services__item"
                 data-aos="fade-right"
                 data-aos-duration="600"
                 data-aos-delay="100"
               >
-                <div className="contact__widget__header">
-                  <h3>Get in Touch</h3>
-                  <p>
-                    Ready to bring your vision to life? Contact Zohar Media
-                    today!
-                  </p>
-                </div>
+                <h4>Get in Touch</h4>
+                <p>
+                  Ready to bring your vision to life? Contact Zohar Media today!
+                </p>
 
-                <div
-                  className="contact__widget__item"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay="200"
-                >
-                  <div className="contact__widget__icon">
-                    <i className="fa fa-map-marker"></i>
+                <div className="contact__details">
+                  <div
+                    className="contact__widget__item"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay="200"
+                  >
+                    <div className="contact__widget__icon">
+                      <i className="fa fa-map-marker"></i>
+                    </div>
+                    <div className="contact__widget__text">
+                      <h5>Our Location</h5>
+                      <p>{CONTACT_INFO.ADDRESS}</p>
+                    </div>
                   </div>
-                  <div className="contact__widget__text">
-                    <h5>Our Location</h5>
-                    <p>{CONTACT_INFO.ADDRESS}</p>
-                  </div>
-                </div>
 
-                <div
-                  className="contact__widget__item"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay="300"
-                >
-                  <div className="contact__widget__icon">
-                    <i className="fa fa-phone"></i>
+                  <div
+                    className="contact__widget__item"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay="300"
+                  >
+                    <div className="contact__widget__icon">
+                      <i className="fa fa-phone"></i>
+                    </div>
+                    <div className="contact__widget__text">
+                      <h5>Call Us</h5>
+                      <p>
+                        {CONTACT_INFO.PHONE_PRIMARY}
+                        <br />
+                        {CONTACT_INFO.PHONE_SECONDARY}
+                      </p>
+                    </div>
                   </div>
-                  <div className="contact__widget__text">
-                    <h5>Call Us</h5>
-                    <p>
-                      {CONTACT_INFO.PHONE_PRIMARY}
-                      <br />
-                      {CONTACT_INFO.PHONE_SECONDARY}
-                    </p>
-                  </div>
-                </div>
 
-                <div
-                  className="contact__widget__item"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay="400"
-                >
-                  <div className="contact__widget__icon">
-                    <i className="fa fa-envelope"></i>
+                  <div
+                    className="contact__widget__item"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay="400"
+                  >
+                    <div className="contact__widget__icon">
+                      <i className="fa fa-envelope"></i>
+                    </div>
+                    <div className="contact__widget__text">
+                      <h5>Email Us</h5>
+                      <p>{CONTACT_INFO.EMAIL}</p>
+                    </div>
                   </div>
-                  <div className="contact__widget__text">
-                    <h5>Email Us</h5>
-                    <p>{CONTACT_INFO.EMAIL}</p>
-                  </div>
-                </div>
 
-                <div
-                  className="contact__widget__item"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay="500"
-                >
-                  <div className="contact__widget__icon">
-                    <i className="fa fa-clock-o"></i>
+                  <div
+                    className="contact__widget__item"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay="500"
+                  >
+                    <div className="contact__widget__icon">
+                      <i className="fa fa-clock-o"></i>
+                    </div>
+                    <div className="contact__widget__text">
+                      <h5>Business Hours</h5>
+                      <p>
+                        Monday - Friday: 9:00 AM - 7:00 PM
+                        <br />
+                        Saturday: 10:00 AM - 4:00 PM
+                        <br />
+                        Sunday: By Appointment
+                      </p>
+                    </div>
                   </div>
-                  <div className="contact__widget__text">
-                    <h5>Business Hours</h5>
-                    <p>
-                      Monday - Friday: 9:00 AM - 7:00 PM
-                      <br />
-                      Saturday: 10:00 AM - 4:00 PM
-                      <br />
-                      Sunday: By Appointment
-                    </p>
-                  </div>
-                </div>
 
-                {/* Social Media */}
-                <div
-                  className="contact__social"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay="600"
-                >
-                  <h5>Follow Us</h5>
-                  <div className="contact__social__links">
-                    {SOCIAL_MEDIA_LINKS.filter(
-                      (social) => social.platform !== "twitter"
-                    ).map((social) => (
-                      <a
-                        key={social.platform}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`social__link ${social.platform}`}
-                        aria-label={social.ariaLabel}
-                      >
-                        <i className={social.icon}></i>
-                      </a>
-                    ))}
+                  {/* Social Media */}
+                  <div
+                    className="contact__social"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay="600"
+                  >
+                    <h5>Follow Us</h5>
+                    <div className="contact__social__links">
+                      {SOCIAL_MEDIA_LINKS.filter(
+                        (social) => social.platform !== "x"
+                      ).map((social) => (
+                        <a
+                          key={social.platform}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`social__link ${social.platform}`}
+                          aria-label={social.ariaLabel}
+                        >
+                          <i className={social.icon}></i>
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -196,7 +194,7 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="map" data-aos="fade-in" data-aos-duration="800">
+      {/* <section className="map" data-aos="fade-in" data-aos-duration="800">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -228,7 +226,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 }

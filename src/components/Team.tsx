@@ -23,7 +23,7 @@ const teamMembers: TeamMember[] = [
     role: "Creative Director",
     image: "/img/team/team-1.jpg",
     socials: SOCIAL_MEDIA_LINKS.filter((social) =>
-      ["facebook", "twitter", "linkedin", "instagram"].includes(social.platform)
+      ["facebook", "x", "linkedin", "instagram"].includes(social.platform)
     ),
   },
   {
@@ -55,10 +55,10 @@ const teamMembers: TeamMember[] = [
         ariaLabel: "Facebook",
       },
       {
-        platform: "twitter",
+        platform: "x",
         url: "#",
-        icon: "fa fa-twitter",
-        ariaLabel: "Twitter",
+        icon: "fa fa-x-twitter",
+        ariaLabel: "X",
       },
       {
         platform: "pinterest",
@@ -81,7 +81,7 @@ const teamMembers: TeamMember[] = [
     image: "/img/team/team-4.jpg",
     extraClass: "team__item--four",
     socials: SOCIAL_MEDIA_LINKS.filter((social) =>
-      ["facebook", "twitter", "linkedin", "instagram"].includes(social.platform)
+      ["facebook", "x", "linkedin", "instagram"].includes(social.platform)
     ),
   },
 ];
@@ -134,13 +134,13 @@ const Team: FC = () => {
                 <div className="team__item__text absolute bottom-0 w-full text-center text-white p-4 bg-black/50">
                   <h4>{member.name}</h4>
                   <p>{member.role}</p>
-                  <div className="team__item__social flex justify-center gap-3 mt-2">
+                  {/* <div className="team__item__social flex justify-center gap-3 mt-2">
                     {member.socials.map((social, i) => (
                       <Link key={i} href={social.url}>
                         <i className={social.icon}></i>
                       </Link>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

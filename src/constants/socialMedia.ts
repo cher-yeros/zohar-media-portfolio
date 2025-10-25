@@ -14,37 +14,37 @@ export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
   {
     platform: "facebook",
     url: "https://www.facebook.com/profile.php?id=61579623959145&mibextid=rS40aB7S9Ucbxw6v",
-    icon: "fa fa-facebook",
+    icon: "fab fa-facebook",
     ariaLabel: "Facebook",
   },
   {
-    platform: "twitter",
-    url: "https://twitter.com/zoharmedia",
-    icon: "fa fa-twitter",
-    ariaLabel: "Twitter",
+    platform: "x",
+    url: "https://x.com/ZoharMediaa?t=2Ahc0sjja6Egp-UNDsq8uQ&s=35",
+    icon: "fab fa-x-twitter",
+    ariaLabel: "X",
   },
   {
     platform: "linkedin",
     url: "https://www.linkedin.com/company/zohar-media/",
-    icon: "fa fa-linkedin",
+    icon: "fab fa-linkedin",
     ariaLabel: "LinkedIn",
   },
   {
     platform: "instagram",
     url: "https://instagram.com/zoharmediaa",
-    icon: "fa fa-instagram",
+    icon: "fab fa-instagram",
     ariaLabel: "Instagram",
   },
   {
     platform: "youtube",
     url: "https://www.youtube.com/@KingBruk",
-    icon: "fa fa-youtube-play",
+    icon: "fab fa-youtube",
     ariaLabel: "YouTube",
   },
   {
     platform: "tiktok",
     url: "https://www.tiktok.com/@zoharmedia?_t=ZM-90PIWVegtBr&_r=1",
-    icon: "fa fa-video-camera",
+    icon: "fab fa-tiktok",
     ariaLabel: "TikTok",
   },
 ];
@@ -89,7 +89,7 @@ export const CONTACT_INFO = {
 export const SOCIAL_URLS = {
   FACEBOOK:
     "https://www.facebook.com/profile.php?id=61579623959145&mibextid=rS40aB7S9Ucbxw6v",
-  TWITTER: "https://twitter.com/zoharmedia",
+  X: "https://x.com/ZoharMediaa?t=2Ahc0sjja6Egp-UNDsq8uQ&s=35",
   LINKEDIN: "https://www.linkedin.com/company/zohar-media/",
   INSTAGRAM: "https://instagram.com/zoharmediaa",
   YOUTUBE: "https://www.youtube.com/@KingBruk",

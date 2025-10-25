@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 import PortfolioPage from "@/components/PortfolioPage";
@@ -65,7 +65,9 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Section */}
-      <PortfolioPage />
+      <Suspense fallback={<div>Loading portfolio...</div>}>
+        <PortfolioPage />
+      </Suspense>
     </Layout>
   );
 }

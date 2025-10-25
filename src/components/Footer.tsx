@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-2 col-md-3 col-sm-3">
+            {/* <div className="col-lg-2 col-md-3 col-sm-3">
               <div className="footer__option__item">
                 <h5>Who we are</h5>
                 <ul>
@@ -87,22 +87,30 @@ const Footer: React.FC = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="col-lg-2 col-md-3 col-sm-3">
+            </div> */}
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="footer__option__item">
                 <h5>Our work</h5>
-                <ul>
+                <ul className="pl-0" style={{ padding: 0 }}>
                   <li>
-                    <Link href="/portfolio">Video Production</Link>
+                    <Link href="/portfolio?filter=video-media-production">
+                      Video & Media Production
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/portfolio">Event Coverage</Link>
+                    <Link href="/portfolio?filter=social-media-management">
+                      Social Media Management
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/portfolio">Social Media Content</Link>
+                    <Link href="/portfolio?filter=event-planning-production">
+                      Event Planning & Production
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/services">Event Planning</Link>
+                    <Link href="/portfolio?filter=professional-editing">
+                      Professional Editing
+                    </Link>
                   </li>
                 </ul>
               </div>

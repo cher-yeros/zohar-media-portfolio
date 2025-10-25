@@ -18,14 +18,19 @@ export const SEO_CONSTANTS = {
     "Zohar Media",
   ],
   CONTACT_INFO: {
-    PHONE: "+1-XXX-XXX-XXXX",
-    EMAIL: "info@zoharmedia.net",
-    ADDRESS: "Atlanta, GA",
+    PHONE_PRIMARY: "+251913119638",
+    PHONE_SECONDARY: "+251955318719",
+    EMAIL: "zoharmedia7@gmail.com",
+    ADDRESS: "Addis Ababa, Ethiopia",
     SOCIAL_MEDIA: {
-      FACEBOOK: "https://www.facebook.com/zoharmedia",
-      INSTAGRAM: "https://www.instagram.com/zoharmedia",
-      YOUTUBE: "https://www.youtube.com/zoharmedia",
-      TWITTER: "https://www.twitter.com/zoharmedia",
+      FACEBOOK:
+        "https://www.facebook.com/profile.php?id=61579623959145&mibextid=rS40aB7S9Ucbxw6v",
+      INSTAGRAM: "https://instagram.com/zoharmediaa",
+      YOUTUBE: "https://www.youtube.com/@KingBruk",
+      X: "https://x.com/ZoharMediaa?t=2Ahc0sjja6Egp-UNDsq8uQ&s=35",
+      LINKEDIN: "https://www.linkedin.com/company/zohar-media/",
+      TIKTOK: "https://www.tiktok.com/@zoharmedia?_t=ZM-90PIWVegtBr&_r=1",
+      VIMEO: "https://vimeo.com/zoharmedia",
     },
   },
 };
